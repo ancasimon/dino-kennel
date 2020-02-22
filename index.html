@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3a19459a58.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href='./main.css'>
     <title>SImon's Dino-Kennel</title>
@@ -11,6 +12,56 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Simon's Dino-Kennel</a>
     </nav>
+
+
+<!-- To indent the whole section below, we wrap it in a div and give it a class of col-10 and offset-1: -->
+<div class="col-10 offset-1">
+<!-- Collapsible accordion from Bootstrap: -->
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-plus-square"></i> Add Dino
+                </button>
+                </h2>
+            </div>
+  
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <!-- This is where we put the form from Bootstrap: Also - we create two columns with the class col-6 repeated twice and adding a class="row" to the entire form -->
+                    <form class="row" id="new-dino-form">
+                        <div class="col-6"> 
+                            <div class="form-group">
+                                <label for="dino-name">Name</label>
+                                <input type="text" class="form-control" id="dino-name" aria-describedby="nameHelp" placeholder="Enter dino's name">
+                              </div>
+                              <div class="form-group">
+                                <label for="dino-age">Age</label>
+                                <input type="number" class="form-control" id="dino-age" aria-describedby="ageHelp" placeholder="Enter dino's age">
+                              </div>
+                              <div class="form-group">
+                                <label for="dino-type">Type</label>
+                                <input type="text" class="form-control" id="dino-type" aria-describedby="typeHelp" placeholder="Enter dino's type">
+                              </div>
+                              <button type="submit" id="submit-new-dino" class="btn btn-primary">Submit</button>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="dino-owner">Owner</label>
+                                <input type="text" class="form-control" id="dino-owner" aria-describedby="ownerHelp" placeholder="Enter dino's owner">
+                              </div>
+                              <div class="form-group">
+                                <label for="dino-image">Image</label>
+                                <input type="text" class="form-control" id="dino-image" aria-describedby="imageHelp" placeholder="Link to dino's image">
+                              </div>
+                        </div>                        
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
