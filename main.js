@@ -1,5 +1,28 @@
 const dinos = [];
 
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+};
+
+const printDinos = (dinoArray) => {
+    let domString = '';
+    for (let i=0; i < dinoArray.length; i++) {
+        domString += '<div class="col-4">';
+        domString += '<div class="card">';
+        domString += `<img class="card-img-top" src=${dinoArray[i].imageUrl} alt="Card image cap">`;
+        domString += '<div class="card-body">';
+        domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
+        domString += `<p class="card-text">Health: ${dinoArray[i].health}</p>`;
+        domString += '</div>';
+        domString += '</div>';
+        domString += '</div>';
+    }
+    printToDom("kennel", domString);
+};
+
+
+
 // When the form gets submitted, we want to clear the form as well as collapse the form under the Add Dino button. 
 
 // 1 - To CLEAR the form: We will use the reset method - see below; otherwise - the old way was that you could create a function to clear the form once data // has been submitted:
@@ -15,6 +38,7 @@ const dinos = [];
 // We will add it to the newDino function because it is not something that will be reused so it does not need its own function. 
 
 // The newDino function prevents the default browser behavior after any event that calls this function (WILL NEED TO USE THISD WITH MOST FORM TO PREVENT DEFAULT REFRESH BEHAVIOR), AND then creates a brandNewDino object (usign the values entered in the form input fields and their unique ids), AND then pushes the brandNewDino into the dinos array we defined earlier.
+
 const newDino = (e) => {
     e.preventDefault();
     const brandNewDino = {
@@ -31,6 +55,7 @@ const newDino = (e) => {
     // clearNewDinoForm();
     document.getElementById('new-dino-form').reset();
     document.getElementById('collapseOne').classList.remove('show');
+    printDinos(dinos);
     console.log("Hello from newDino event listener function!", dinos);
 };
 
