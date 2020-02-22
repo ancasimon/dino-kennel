@@ -43,9 +43,43 @@ const closeSingleViewEvent = () => {
     printDinos(dinos);
 };
 
-const viewSingleDino = () => {
+
+// Now - we want to add a way to see the single dino:
+//  - when I click the View/eye button, I want to grab the ID of the parent card - I can do that by using the .closest method and asking it to pull the id of the parent with a class of card(.card) who is closest to my target element - so e.target gives me the target element I clicked on (in our case, the View/eye button; .closest is th emethod looking fo rth enext thing up in the tree of this element; ('.card) tells it that what I am looking for is a parent with a class of card; id then tells it ti pull the id of that parent): 
+// To make all this Worker, I had to give the parent card the unique ID of each dino - see the item in the printDinos domString that does that by using the ${dinoArray[i].id}!
+// .find and other array methods - do a for loop over the dinos array until they meet a condition (specified in the curly brackets/or the second part of the equation (if you use curly brackets, you need to specify "return"  at the beginninginside the curly brackets), afetr the => arrow - the dino id taht I am currently on is the same as the id of a dino in the array): - this is what the find array mnethod does:
+// const find = () => {
+//     for (let i= 0; i < dinos.length; i++) {
+//         if(dinoId === dinos[i].id) {
+//             return dinos[i];
+//         }
+//     };
+// };
+// In the actual find array method used below, what goes in the parentheses is the equivalent of the dinos[i].id; so that takes you to this: dinos.find((currentDino) => dinoId === currentDino.id);
+// Note that sometimes people don't rename the variable and just use x instead: dinos.find((x) => dinoId === x.id);
+
+
+
+const viewSingleDino = (e) => {
+    const dinoId = e.target.closest('.card').id;
+    const selectedDino = dinos.find((currentDino) => dinoId === currentDino.id);
+    console.log(selectedDino);
     let domString = '';
     domString += '<button id="close-single-view" type="button" class="btn btn-outline-dark"><i class="fas fa-window-close"></i></button>';
+    domString += '<div class="container">';
+    domString +=    '<div class="row">';
+    domString +=        '<div class="col-6">';
+    domString +=            `<img class="img-fluid" src="${selectedDino.imageUrl}" alt="dinosaur picture"></img>`;
+    domString +=        '</div>';
+    domString +=        '<div class="col-6">';
+    domString +=            `<h2>Name: ${selectedDino.name}</h2>`;
+    domString +=            `<p>Age: ${selectedDino.age}</p>`;
+    domString +=            `<p>Type: ${selectedDino.type}</p>`;
+    domString +=            `<p>Owner: ${selectedDino.owner}</p>`;
+    domString +=            `<p>Health: ${selectedDino.health}</p>`;
+    domString +=        '</div>';
+    domString +=    '</div>';
+    domString += '</div>';
     printToDom('kennel', '');
     printToDom('single-view', domString);
     document.getElementById("close-single-view").addEventListener('click', closeSingleViewEvent);
@@ -62,7 +96,7 @@ const printDinos = (dinoArray) => {
     let domString = '';
     for (let i=0; i < dinoArray.length; i++) {
         domString += '<div class="col-4">';
-        domString += '<div class="card">';
+        domString += `<div id="${dinoArray[i].id}" class="card">`;
         domString += `<img class="card-img-top" src=${dinoArray[i].imageUrl} alt="Card image cap">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
