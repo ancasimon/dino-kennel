@@ -16,7 +16,7 @@ const dinos = [
         age: 100,
         owner: 'Luke',
         adventures: [],
-        health: 100,
+        health: 1,
         imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRi6ZTKUpuygpYwvWTUbX_ck5OC3H-fohBR8-ifE21DcrToD6Cz'
       },
       {
@@ -26,7 +26,7 @@ const dinos = [
         age: 100,
         owner: 'Mary',
         adventures: [],
-        health: 100,
+        health: 45,
         imageUrl: 'https://ichef.bbci.co.uk/wwfeatures/wm/live/624_351/images/live/p0/3j/mt/p03jmt44.jpg'
       }
 ];
@@ -92,12 +92,32 @@ const singleDinoAddEvents = () => {
     };
 };
 
+// // The feature to increase the dino's health every time you pet him  requires:
+// 1- an event listener thatr is similar to the view single dino event listener - see petEvents below; 
+// 2 - that you use the .closest method that we used earlier in viewSingleDino to get the parent card ID
+// 3 - findIndex to find the index of the selected dino object in the array in order to know which dino's health score we should increase - then you can say dinos[dinoPosition].health = which means that the health value of the dino object in the position specified in the squre brackets.
+
+const dinoHealth = (e) => {
+    const dinoId = e.target.closest('.card').id;
+    const dinoPosition = dinos.findIndex((currentDino) => currentDino.id === dinoId);
+    dinos[dinoPosition].health += 1;
+    printDinos(dinos);
+};
+
+
+const petEvents = () => {
+    const dinoPetButtons = document.getElementsByClassName('dino-photo');
+    for (let i=0; i < dinoPetButtons.length; i++) {
+        dinoPetButtons[i].addEventListener('mouseleave', dinoHealth);
+    };
+};
+
 const printDinos = (dinoArray) => {
     let domString = '';
     for (let i=0; i < dinoArray.length; i++) {
         domString += '<div class="col-4">';
         domString += `<div id="${dinoArray[i].id}" class="card">`;
-        domString += `<img class="card-img-top" src=${dinoArray[i].imageUrl} alt="Card image cap">`;
+        domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].imageUrl} alt="Card image cap">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
         domString += `<p class="card-text">Health: ${dinoArray[i].health}</p>`;
@@ -108,6 +128,7 @@ const printDinos = (dinoArray) => {
     }
     printToDom("kennel", domString);
     singleDinoAddEvents();
+    petEvents();
 };
 
 
