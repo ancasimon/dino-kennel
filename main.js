@@ -40,7 +40,7 @@ const printToDom = (divId, textToPrint) => {
 
 const closeSingleViewEvent = () => {
     printToDom('single-view', '');
-    printDinos(dinos);
+    buildAllDinos(dinos);
 };
 
 
@@ -84,7 +84,7 @@ const viewSingleDino = (e) => {
     domString +=        '</div>';
     domString +=    '</div>';
     domString += '</div>';
-    printToDom('kennel', '');
+    clearAllDinos();
     printToDom('single-view', domString);
     document.getElementById("close-single-view").addEventListener('click', closeSingleViewEvent);
 };
@@ -106,7 +106,7 @@ const dinoHealth = (e) => {
     const dinoPosition = dinos.findIndex((currentDino) => currentDino.id === dinoId);
     if (dinos[dinoPosition].health < 100) {
         dinos[dinoPosition].health += 1;
-        printDinos(dinos);
+        buildAllDinos(dinos);
         };
     };
 
@@ -129,7 +129,7 @@ const deleteDinoEvent = (e) => {
     const dinoId = e.target.closest('.card').id;
     const dinoPosition = dinos.findIndex((currentDino) => currentDino.id === dinoId);
     dinos.splice(dinoPosition, 1);
-    printDinos(dinos); 
+    buildAllDinos(dinos); 
 };
 
 // To know which dino to delete with the delete function above, we need to add event listeners to the delete buttons on each dino card so that we can then use the action of clicking the Delete button as an event (and thus be able to identify the target of the event and then the parent with the card class and then get that id!!). Once the dino is found, this will trigger the deleteDInoEvent funciton above!!! This is what the findDinoToDelete function below does!
@@ -146,10 +146,10 @@ const feedMe = (e) => {
     const dinoPosition = dinos.findIndex((currentDino) => currentDino.id === dinoId);
     if (dinos[dinoPosition].health < 90) {
         dinos[dinoPosition].health += 10;
-        printDinos(dinos);
+        buildAllDinos(dinos);
     } else if (dinos[dinoPosition].health > 89 && dinos[dinoPosition].health <100) {
         dinos[dinoPosition].health = 100;
-        printDinos(dinos);
+        buildAllDinos(dinos);
     }
 };
 
@@ -206,6 +206,33 @@ const printDinos = (dinoArray) => {
 
 // The newDino function prevents the default browser behavior after any event that calls this function (WILL NEED TO USE THISD WITH MOST FORM TO PREVENT DEFAULT REFRESH BEHAVIOR), AND then creates a brandNewDino object (usign the values entered in the form input fields and their unique ids), AND then pushes the brandNewDino into the dinos array we defined earlier.
 
+const hospitalDomStringBuilder = (dinoArray) => {
+    let domString = '';
+    for (let i = 0; i < dinoArray.length; i++) {
+        domString += '<div class="col-4">';
+        domString += `<div id="${dinoArray[i].id}" class="card">`;
+        domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].imageUrl} alt="Card image cap">`;
+        domString += '<div class="card-body">';
+        domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
+        domString += `<p class="card-text">Health:</p>`;
+        domString += '<div class="progress">';
+        domString += `<div class="progress-bar bg-danger" role="progressbar" style="width: ${dinoArray[i].health}%" aria-valuenow="${dinoArray[i].health}" aria-valuemin="0" aria-valuemax="100">`;
+        domString += '</div>';
+        domString += '</div>';
+        domString += '<button class="btn btn-outline-dark single-dino"><i class="fas fa-eye"></i></button>';
+        domString += '<button type="button" class="btn btn-success feed-dino">Feed Me</button>';
+        domString += '<button type="button" class="btn btn-dark delete-dino">Delete</button>';
+        domString += '</div>';
+        domString += '</div>';
+        domString += '</div>';
+        };
+    printToDom('hospital', domString);
+    singleDinoAddEvents();
+    petEvents();
+    deleteEvents();
+    feedEvents();
+};
+
 const newDino = (e) => {
     e.preventDefault();
     const brandNewDino = {
@@ -222,14 +249,28 @@ const newDino = (e) => {
     // clearNewDinoForm();
     document.getElementById('new-dino-form').reset();
     document.getElementById('collapseOne').classList.remove('show');
+    buildAllDinos();
+};
+
+const findHospitalDinos = (dinos) => {
+    const hospitalDinos = dinos.filter((x) => x.health > 0 && x.health < 40);
+    hospitalDomStringBuilder(hospitalDinos);
+};
+
+const clearAllDinos = () => {
+    printToDom('kennel', '');
+    printToDom('hospital','');
+};
+
+const buildAllDinos = () => {
     printDinos(dinos);
-    console.log("Hello from newDino event listener function!", dinos);
+    findHospitalDinos(dinos);
 };
 
 // In the init function, we add the event listener for the click event - when user clicks the button with the submit-new-dino id, then the newDino function gets called. 
 const init = () => {
     document.getElementById('submit-new-dino').addEventListener('click', newDino);
-    printDinos(dinos)
+    buildAllDinos();
 };
 
 init();
