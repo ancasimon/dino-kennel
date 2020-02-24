@@ -114,6 +114,29 @@ const petEvents = () => {
     };
 };
 
+// This is the function that will delete the dino:
+// 1 - it takes a parameter of the event that is taking place on the page and the it looks for the target of that event and then for the closest parent with a class of a card ('.card); 
+// 2 - Then, once it has the card's id, it uses the findIndex method to identify the position (in he array) of the dino that has the same exact id as the card we just identified (that contains the button that was the target of the event);
+// 3 - then it removes that dino from the array using the splice method: first, it specified what position to start removing an ID from (the position identified by the dinoPosition variable) and then it specifies the method should remove only 1 item from the array.
+// 4 - then it finally calls the printDinos funciton to print the whole array again - minus the one dino that was removed!! 
+// 5- we will also add this deleteDinoEvent function to the printDinos funciton so that it gets built into the array when the list of dinos (including the delete buttons) get built!
+
+const deleteDinoEvent = (e) => {
+    const dinoId = e.target.closest('.card').id;
+    const dinoPosition = dinos.findIndex((currentDino) => currentDino.id === dinoId);
+    dinos.splice(dinoPosition, 1);
+    printDinos(dinos); 
+};
+
+// To know which dino to delete with the delete function above, we need to add event listeners to the delete buttons on each dino card so that we can then use the action of clicking the Delete button as an event (and thus be able to identify the target of the event and then the parent with the card class and then get that id!!). Once the dino is found, this will trigger the deleteDInoEvent funciton above!!! This is what the findDinoToDelete function below does!
+
+const deleteEvents = () => {
+    const dinoDeleteButtons = document.getElementsByClassName('delete-dino');
+    for (let i=0; i <dinoDeleteButtons.length; i++) {
+        dinoDeleteButtons[i].addEventListener('click', deleteDinoEvent);
+    }
+};
+
 const printDinos = (dinoArray) => {
     let domString = '';
     for (let i=0; i < dinoArray.length; i++) {
@@ -124,6 +147,7 @@ const printDinos = (dinoArray) => {
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
         domString += `<p class="card-text">Health: ${dinoArray[i].health}</p>`;
         domString += '<button class="btn btn-outline-dark single-dino"><i class="fas fa-eye"></i></button>';
+        domString += '<button type="button" class="btn btn-dark delete-dino">Delete</button>';
         domString += '</div>';
         domString += '</div>';
         domString += '</div>';
@@ -131,6 +155,7 @@ const printDinos = (dinoArray) => {
     printToDom("kennel", domString);
     singleDinoAddEvents();
     petEvents();
+    deleteEvents();
 };
 
 
@@ -174,7 +199,7 @@ const newDino = (e) => {
 // In the init function, we add the event listener for the click event - when user clicks the button with the submit-new-dino id, then the newDino function gets called. 
 const init = () => {
     document.getElementById('submit-new-dino').addEventListener('click', newDino);
-    printDinos(dinos);
+    printDinos(dinos)
 };
 
 init();
