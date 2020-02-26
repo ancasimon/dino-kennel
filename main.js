@@ -2,12 +2,12 @@ const dinos = [
     {
         id: 'dino1',
         name: 'Rex',
-        type: 'T Rex',
+        type: 'Tyrannosaurus',
         age: 100,
         owner: 'Zoe',
         adventures: [],
         health: 99,
-        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61fC04pumjL._AC_SL1001_.jpg'
+        image: 'dino-kennel-images/tyrannosaurus.png'
       },
       {
         id: 'dino2',
@@ -17,7 +17,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 1,
-        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRi6ZTKUpuygpYwvWTUbX_ck5OC3H-fohBR8-ifE21DcrToD6Cz'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRi6ZTKUpuygpYwvWTUbX_ck5OC3H-fohBR8-ifE21DcrToD6Cz'
       },
       {
         id: 'dino3',
@@ -27,7 +27,7 @@ const dinos = [
         owner: 'Mary',
         adventures: [],
         health: 45,
-        imageUrl: 'https://ichef.bbci.co.uk/wwfeatures/wm/live/624_351/images/live/p0/3j/mt/p03jmt44.jpg'
+        image: 'https://ichef.bbci.co.uk/wwfeatures/wm/live/624_351/images/live/p0/3j/mt/p03jmt44.jpg'
       }
 ];
 
@@ -69,7 +69,7 @@ const viewSingleDino = (e) => {
     domString += '<div class="container">';
     domString +=    '<div class="row">';
     domString +=        '<div class="col-6">';
-    domString +=            `<img class="img-fluid" src="${selectedDino.imageUrl}" alt="dinosaur picture"></img>`;
+    domString +=            `<img class="img-fluid" src="${selectedDino.image}" alt="dinosaur picture"></img>`;
     domString +=        '</div>';
     domString +=        '<div class="col-6">';
     domString +=            `<h2>Name: ${selectedDino.name}</h2>`;
@@ -166,7 +166,7 @@ const printDinos = (dinoArray) => {
     for (let i=0; i < dinoArray.length; i++) {
         domString += '<div class="col-4">';
         domString += `<div id="${dinoArray[i].id}" class="card">`;
-        domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].imageUrl} alt="Card image cap">`;
+        domString += `<img class="card-img-top dino-photo" src="${dinoArray[i].image}" alt="dinosaur pic">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
         domString += `<p class="card-text">Health:</p>`;
@@ -211,7 +211,7 @@ const hospitalDomStringBuilder = (dinoArray) => {
     for (let i = 0; i < dinoArray.length; i++) {
         domString += '<div class="col-4">';
         domString += `<div id="${dinoArray[i].id}" class="card">`;
-        domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].imageUrl} alt="Card image cap">`;
+        domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].image} alt="Card image cap">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
         domString += `<p class="card-text">Health:</p>`;
