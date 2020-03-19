@@ -38,7 +38,20 @@ const dinos = [
         type: 'Tyrannosaurus',
         age: 55,
         owner: 'Anca',
-        adventures: [],
+        adventures: [
+            {
+                title: "Archery",
+                date: "March 1, 2020"
+            },
+            {
+                title: "Swimming",
+                date: "March 8, 2020"
+            },
+            {
+                title: "Underwater digging",
+                date: "March 9, 2020"
+            }
+        ],
         health: 0,
         image: 'dino-kennel-images/Lizzie.jpeg',
         alt: 'Picture of a Tyrannosaurus'
@@ -49,7 +62,20 @@ const dinos = [
         type: 'Parasaurolophus',
         age: 20,
         owner: 'Greg',
-        adventures: [],
+        adventures: [
+            {
+                title: "Cave exploration",
+                date: "February 22, 2020"
+            },
+            {
+                title: "Swimming",
+                date: "March 5, 2020"
+            },
+            {
+                title: "Archery",
+                date: "March 9, 2020"
+            }
+        ],
         health: 5,
         image: 'dino-kennel-images/Perry.jpeg',
         alt: 'Picture of a Parasaurolophus'
@@ -89,6 +115,59 @@ const dinos = [
       }
 ];
 
+const adventures = [
+    {
+      id: 'adventure1',
+      title: 'BRAWL',
+      healthHit: 50
+    },
+    {
+      id: 'adventure2',
+      title: 'Cave exploration',
+      healthHit: 10
+    },
+    {
+      id: 'adventure3',
+      title: 'Hiking',
+      healthHit: 1
+    },
+    {
+      id: 'adventure4',
+      title: 'Playing in traffic',
+      healthHit: 3
+    },
+    {
+      id: 'adventure5',
+      title: 'Baking',
+      healthHit: 10
+    },
+    {
+      id: 'adventure6',
+      title: 'Archery',
+      healthHit: 4
+    },
+    {
+      id: 'adventure7',
+      title: 'Underwater digging',
+      healthHit: 99
+    },
+    {
+      id: 'adventure8',
+      title: 'Swimming',
+      healthHit: 3
+    },
+    {
+      id: 'adventure9',
+      title: 'Fishing',
+      healthHit: 23
+    },
+    {
+      id: 'adventure10',
+      title: 'Chasing unicorns',
+      healthHit: 50
+    }
+  ];
+
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
@@ -116,6 +195,29 @@ const closeSingleViewEvent = () => {
 // In the actual find array method used below, what goes in the parentheses is the equivalent of the dinos[i].id; so that takes you to this: dinos.find((currentDino) => dinoId === currentDino.id);
 // Note that sometimes people don't rename the variable and just use x instead: dinos.find((x) => dinoId === x.id);
 
+const adventureTableBuilder = (advArray) => {
+  let domString = '';
+  domString += '<table class="table">';
+  domString += '<thead class="thead=light">';
+  domString += '<tr>';
+  domString += '<th scope="col">#</th>';
+  domString += '<th scope="col">Date</th>';
+  domString += '<th scope="col">Type</th>';
+  domString += '</tr>';
+  domString += '</thead>';
+  domString += '<tbody>';
+  for (let i=0; i < advArray.length; i++) {
+      domString += '<tr>';
+      domString += `<th scope="row">${i+1}</th>`;
+      domString += `<td>${moment(advArray[i].date).format('MMMM Do YYYY, h:mm:ss a')}</td>`;
+      domString += `<td>${advArray[i].title}</td>`;
+      domString += '</tr>';
+  }
+  domString += '</tbody>';
+  domString += '</table>';
+
+  return domString;
+};
 
 
 const viewSingleDino = (e) => {
@@ -134,12 +236,13 @@ const viewSingleDino = (e) => {
     domString +=            `<p>Age: ${selectedDino.age}</p>`;
     domString +=            `<p>Type: ${selectedDino.type}</p>`;
     domString +=            `<p>Owner: ${selectedDino.owner}</p>`;
-    domString +=            `<p>Health: </p>`;
+    domString +=            `<p>Health: ${selectedDino.health}</p>`;
     domString +=            '<div class="progress">';
     domString +=            `<div class="progress-bar bg-danger" role="progressbar" style="width: ${selectedDino.health}%" aria-valuenow="${selectedDino.health}" aria-valuemin="0" aria-valuemax="100">`;
     domString +=            '</div>';
     domString +=            '</div>';
     domString +=        '</div>';
+    domString += adventureTableBuilder(selectedDino.adventures);
     domString +=    '</div>';
     domString += '</div>';
     clearAllDinos();
@@ -219,6 +322,26 @@ const feedEvents = () => {
     }
 };
 
+const addAdventure = (e) => {
+  const dinoId = e.target.closest('.card').id;
+  const dinoPosition = dinos.findIndex((thisDino) => thisDino.id === dinoId);
+  const randomAdvIndex = Math.floor(Math.random()*adventures.length);
+  const newAdventure = {
+      title: adventures[randomAdvIndex].title,
+      date: Date.now()
+  };
+  dinos[dinoPosition].adventures.push(newAdventure);
+  dinos[dinoPosition].health -= adventures[randomAdvIndex].healthHit;
+  buildAllDinos(dinos);
+};
+
+const advEvents = () => {
+  const advButtons = document.getElementsByClassName('adv-button');
+  for (let i=0; i<advButtons.length; i++) {
+      advButtons[i].addEventListener('click', addAdventure);
+  }
+};
+
 const printDinos = (dinoArray) => {
     let domString = '';
     for (let i=0; i < dinoArray.length; i++) {
@@ -227,13 +350,14 @@ const printDinos = (dinoArray) => {
         domString += `<img class="card-img-top dino-photo" src="${dinoArray[i].image}" alt="${dinoArray[i].alt}">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
-        domString += `<p class="card-text">Health:</p>`;
+        domString += `<p class="card-text">Health: ${dinoArray[i].health}</p>`;
         domString += '<div class="progress">';
         domString += `<div class="progress-bar bg-danger" role="progressbar" style="width: ${dinoArray[i].health}%" aria-valuenow="${dinoArray[i].health}" aria-valuemin="0" aria-valuemax="100">`;
         domString += '</div>';
         domString += '</div>';
-        domString += '<button class="btn btn-outline-dark single-dino"><i class="fas fa-eye"></i></button>';
+        domString += '<button class="btn btn-primary single-dino"><i class="fas fa-binoculars"></i></button>';
         domString += '<button type="button" class="btn btn-success feed-dino"><i class="fas fa-hamburger"></i></button>';
+        domString += '<button class="btn btn-warning text-white adv-button"><i class="fas fa-hiking"></i></button>';
         domString += '<button type="button" class="btn btn-dark delete-dino"><i class="fas fa-trash-alt"></i></button>';
         domString += '</div>';
         domString += '</div>';
@@ -244,6 +368,7 @@ const printDinos = (dinoArray) => {
     petEvents();
     deleteEvents();
     feedEvents();
+    advEvents();
 };
 
 
@@ -272,13 +397,14 @@ const hospitalDomStringBuilder = (dinoArray) => {
         domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].image} alt="${dinoArray[i].alt}">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
-        domString += `<p class="card-text">Health:</p>`;
+        domString += `<p class="card-text">Health: ${dinoArray[i].health}</p>`;
         domString += '<div class="progress">';
         domString += `<div class="progress-bar bg-danger" role="progressbar" style="width: ${dinoArray[i].health}%" aria-valuenow="${dinoArray[i].health}" aria-valuemin="0" aria-valuemax="100">`;
         domString += '</div>';
         domString += '</div>';
-        domString += '<button class="btn btn-outline-dark single-dino"><i class="fas fa-eye"></i></button>';
+        domString += '<button class="btn btn-primary single-dino"><i class="fas fa-binoculars"></i></button>';
         domString += '<button type="button" class="btn btn-success feed-dino"><i class="fas fa-hamburger"></i></button>';
+        domString += '<button class="btn btn-warning text-white adv-button"><i class="fas fa-hiking"></i></button>';
         domString += '<button type="button" class="btn btn-dark delete-dino"><i class="fas fa-trash-alt"></i></button>';
         domString += '</div>';
         domString += '</div>';
@@ -289,6 +415,7 @@ const hospitalDomStringBuilder = (dinoArray) => {
     petEvents();
     deleteEvents();
     feedEvents();
+    advEvents();
 };
 
 const graveyardDomStringBuilder = (dinoArray) => {
