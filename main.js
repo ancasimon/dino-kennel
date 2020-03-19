@@ -356,7 +356,7 @@ const advEvents = () => {
 const printProgress = (dino, divId) => {
   let domString = '';
   if (divId !== 'graveyard') {
-    domString += '<div class="progress">';
+    domString += '<div class="progress" style="height: 30px;">';
     domString += `<div class="progress-bar progress-bar-striped ${dino.health < 40 ? 'bg-danger' : 'bg-success'}" role="progressbar" style="width: ${dino.health}%" aria-valuenow="${dino.health}" aria-valuemin="0" aria-valuemax="100">${dino.health}%</div>`;
     domString += '</div>';
   } else {
@@ -368,10 +368,12 @@ const printProgress = (dino, divId) => {
 
 const printButtons = (divId) => {
   let domString = '';
-  domString += '<button type="button" class="btn btn-primary single-dino"><i class="fas fa-binoculars"></i></button>';
-  domString += `<button type="button" class="btn btn-success feed-dino ${divId === 'graveyard' ? 'disabled' : ''}"><i class="fas fa-hamburger"></i></button>`;
-  domString += `<button type="button" class="btn btn-warning text-white adv-button ${divId === 'graveyard' ? 'disabled' : ''}"><i class="fas fa-hiking"></i></button>`;
-  domString += `<button type="button" class="btn btn-dark delete-dino ${divId === 'graveyard' ? 'disabled' : ''}"><i class="fas fa-trash-alt"></i></button>`;
+  domString += '<div class="row">';
+  domString += '<div class="col-6"><button type="button" class="col-12 m-1 btn btn-primary single-dino"><i class="fas fa-binoculars"></i></button></div>';
+  domString += `<div class="col-6"><button type="button" class="col-12 m-1 btn btn-success feed-dino ${divId === 'graveyard' ? 'disabled' : ''}"><i class="fas fa-hamburger"></i></button></div>`;
+  domString += `<div class="col-6"><button type="button" class="col-12 m-1 btn btn-warning text-white adv-button ${divId === 'graveyard' ? 'disabled' : ''}"><i class="fas fa-hiking"></i></button></div>`;
+  domString += `<div class="col-6"><button type="button" class="col-12 m-1 btn btn-dark delete-dino ${divId === 'graveyard' ? 'disabled' : ''}"><i class="fas fa-trash-alt"></i></button></div>`;
+  domString += '</div>';
   return domString;
 };
 
@@ -525,10 +527,25 @@ const buildAllDinos = () => {
     addEvents();
 };
 
+// const alertNewDinoValidation = () => {
+//   $('#submit-new-dino').modal('show');
+// };
+
+// const submitEvent = () => {
+//   if (document.getElementById('dino-name').value !== '') {
+//     newDino();
+//     } else {
+//       alertNewDinoValidation();
+//     } 
+// };
+
+
+
 // In the init function, we add the event listener for the click event - when user clicks the button with the submit-new-dino id, then the newDino function gets called. 
 const init = () => {
-    document.getElementById('submit-new-dino').addEventListener('click', newDino);
-    buildAllDinos();
+  document.getElementById('submit-new-dino').addEventListener('click', newDino);
+  // submitEvent();
+  buildAllDinos();
 };
 
 init();
