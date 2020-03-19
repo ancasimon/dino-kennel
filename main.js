@@ -7,7 +7,8 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 99,
-        image: 'dino-kennel-images/Annie.jpeg'
+        image: 'dino-kennel-images/Annie.jpeg',
+        alt: 'Picture of an Ankylosaurus'
       },
       {
         id: 'dino2',
@@ -17,7 +18,8 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 1,
-        image: 'dino-kennel-images/Brach.jpeg'
+        image: 'dino-kennel-images/Brach.jpeg',
+        alt: 'Picture of a Brachiosaurus'
       },
       {
         id: 'dino3',
@@ -27,17 +29,19 @@ const dinos = [
         owner: 'Mary',
         adventures: [],
         health: 45,
-        image: 'dino-kennel-images/Flipper.jpeg'
+        image: 'dino-kennel-images/Flipper.jpeg',
+        alt: 'Picture of a Pleisiosaurus'
       },
       {
         id: 'dino4',
         name: 'Lizzie',
-        type: 'Tyrannaosaurus',
+        type: 'Tyrannosaurus',
         age: 55,
         owner: 'Anca',
         adventures: [],
         health: 0,
-        image: 'dino-kennel-images/Lizzie.jpeg'
+        image: 'dino-kennel-images/Lizzie.jpeg',
+        alt: 'Picture of a Tyrannosaurus'
       },
       {
         id: 'dino5',
@@ -47,7 +51,8 @@ const dinos = [
         owner: 'Greg',
         adventures: [],
         health: 5,
-        image: 'dino-kennel-images/Perry.jpeg'
+        image: 'dino-kennel-images/Perry.jpeg',
+        alt: 'Picture of a Parasaurolophus'
       }, 
       {
         id: 'dino6',
@@ -56,8 +61,9 @@ const dinos = [
         age: 10,
         owner: 'Zoe',
         adventures: [],
-        health: 10,
-        image: 'dino-kennel-images/Punk.jpeg'
+        health: 0,
+        image: 'dino-kennel-images/Punk.jpeg',
+        alt: 'Picture of a Stegosaurus'
       },
       {
         id: 'dino7',
@@ -67,7 +73,8 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 80,
-        image: 'dino-kennel-images/Spiney.jpeg'
+        image: 'dino-kennel-images/Spiney.jpeg',
+        alt: 'Picture of a Spinosaurus'
       },
       {
         id: 'dino8',
@@ -76,8 +83,9 @@ const dinos = [
         age: 47,
         owner: 'Anca',
         adventures: [],
-        health: 100,
-        image: 'dino-kennel-images/Walker.jpeg'
+        health: 30,
+        image: 'dino-kennel-images/Walker.jpeg',
+        alt: 'Picture of a Hypacrosaurus'
       }
 ];
 
@@ -119,7 +127,7 @@ const viewSingleDino = (e) => {
     domString += '<div class="container">';
     domString +=    '<div class="row">';
     domString +=        '<div class="col-6">';
-    domString +=            `<img class="img-fluid" src="${selectedDino.image}" alt="dinosaur picture"></img>`;
+    domString +=            `<img class="img-fluid" src="${selectedDino.image}" alt="${selectedDino.alt}"></img>`;
     domString +=        '</div>';
     domString +=        '<div class="col-6">';
     domString +=            `<h2>Name: ${selectedDino.name}</h2>`;
@@ -216,7 +224,7 @@ const printDinos = (dinoArray) => {
     for (let i=0; i < dinoArray.length; i++) {
         domString += '<div class="col-4">';
         domString += `<div id="${dinoArray[i].id}" class="card">`;
-        domString += `<img class="card-img-top dino-photo" src="${dinoArray[i].image}" alt="dinosaur pic">`;
+        domString += `<img class="card-img-top dino-photo" src="${dinoArray[i].image}" alt="${dinoArray[i].alt}">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
         domString += `<p class="card-text">Health:</p>`;
@@ -261,7 +269,7 @@ const hospitalDomStringBuilder = (dinoArray) => {
     for (let i = 0; i < dinoArray.length; i++) {
         domString += '<div class="col-4">';
         domString += `<div id="${dinoArray[i].id}" class="card">`;
-        domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].image} alt="Card image cap">`;
+        domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].image} alt="${dinoArray[i].alt}">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
         domString += `<p class="card-text">Health:</p>`;
@@ -282,6 +290,24 @@ const hospitalDomStringBuilder = (dinoArray) => {
     deleteEvents();
     feedEvents();
 };
+
+const graveyardDomStringBuilder = (dinoArray) => {
+  let domString = '';
+  for (let i=0; i < dinoArray.length; i++) {
+      domString += '<div class="col-4">';
+      domString += `<div id="${dinoArray[i].id}" class="card">`;
+      domString += `<img class="card-img-top dino-photo" src="${dinoArray[i].image}" alt="${dinoArray[i].alt}">`;
+      domString += '<div class="card-body">';
+      domString += `<h5 class="card-title">${dinoArray[i].name}</h5>`;
+      domString += '<div><i class="fas fa-skull-crossbones"></i></div>';
+      domString += '</div>';
+      domString += '</div>';
+      domString += '</div>';
+  }
+  printToDom('graveyard', domString);
+  singleDinoAddEvents();
+};
+
 
 const newDino = (e) => {
     e.preventDefault();
@@ -307,14 +333,21 @@ const findHospitalDinos = (dinos) => {
     hospitalDomStringBuilder(hospitalDinos);
 };
 
+const findGraveyardDinos = (dinos) => {
+  const deadDinos = dinos.filter((thisDino) => thisDino.health < 1);
+  graveyardDomStringBuilder(deadDinos);
+};
+
 const clearAllDinos = () => {
     printToDom('kennel', '');
     printToDom('hospital','');
+    printToDom('graveyard', '');
 };
 
 const buildAllDinos = () => {
     printDinos(dinos);
     findHospitalDinos(dinos);
+    findGraveyardDinos(dinos);
 };
 
 // In the init function, we add the event listener for the click event - when user clicks the button with the submit-new-dino id, then the newDino function gets called. 
