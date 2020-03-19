@@ -1,17 +1,32 @@
 body {
-    background-color: lightpink;
+    background-color: lightgrey;
 }
 
 .logo {
     font-style: italic;
 }
 
-#hospital {
-    background-color: darkred;
+.filter {
+    padding-left: 5em;
+    padding-top: 2em;
 }
 
-#graveyard {
+.kennel {
+    background-color: pink;
+    border: lightgrey;
+    box-shadow: 10px 10px 8px 10px #888888;
+}
+
+.hospital {
+    background-color: darkred;
+    border: lightgrey;
+    box-shadow: 10px 10px 8px 10px #888888;
+}
+
+.graveyard {
     background-color:black;
+    border: lightgrey;
+    box-shadow: 10px 10px 8px 10px #888888;
 }
 
 .section-header {
@@ -20,3 +35,4 @@ body {
     padding: 2em;
     margin-top: 2em;
 }
+
