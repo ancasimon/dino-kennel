@@ -1,33 +1,83 @@
 const dinos = [
     {
         id: 'dino1',
-        name: 'Rex',
-        type: 'Tyrannosaurus',
+        name: 'Annie',
+        type: 'Ankylosaurus',
         age: 100,
         owner: 'Zoe',
         adventures: [],
         health: 99,
-        image: 'dino-kennel-images/tyrannosaurus.png'
+        image: 'dino-kennel-images/Annie.jpeg'
       },
       {
         id: 'dino2',
-        name: 'Jonah',
-        type: 'T Rex',
+        name: 'Brach',
+        type: 'Brachiosaurus',
         age: 100,
         owner: 'Luke',
         adventures: [],
         health: 1,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRi6ZTKUpuygpYwvWTUbX_ck5OC3H-fohBR8-ifE21DcrToD6Cz'
+        image: 'dino-kennel-images/Brach.jpeg'
       },
       {
         id: 'dino3',
-        name: 'Frowns',
-        type: 'T Rex',
-        age: 100,
+        name: 'Flipper',
+        type: 'Pleisiosaurus',
+        age: 50,
         owner: 'Mary',
         adventures: [],
         health: 45,
-        image: 'https://ichef.bbci.co.uk/wwfeatures/wm/live/624_351/images/live/p0/3j/mt/p03jmt44.jpg'
+        image: 'dino-kennel-images/Flipper.jpeg'
+      },
+      {
+        id: 'dino4',
+        name: 'Lizzie',
+        type: 'Tyrannaosaurus',
+        age: 55,
+        owner: 'Anca',
+        adventures: [],
+        health: 0,
+        image: 'dino-kennel-images/Lizzie.jpeg'
+      },
+      {
+        id: 'dino5',
+        name: 'Perry',
+        type: 'Parasaurolophus',
+        age: 20,
+        owner: 'Greg',
+        adventures: [],
+        health: 5,
+        image: 'dino-kennel-images/Perry.jpeg'
+      }, 
+      {
+        id: 'dino6',
+        name: 'Punk',
+        type: 'Stegosaurus',
+        age: 10,
+        owner: 'Zoe',
+        adventures: [],
+        health: 10,
+        image: 'dino-kennel-images/Punk.jpeg'
+      },
+      {
+        id: 'dino7',
+        name: 'Spiney',
+        type: 'Spinosaurus',
+        age: 76,
+        owner: 'Luke',
+        adventures: [],
+        health: 80,
+        image: 'dino-kennel-images/Spiney.jpeg'
+      },
+      {
+        id: 'dino8',
+        name: 'Walker',
+        type: 'Hypacrosaurus',
+        age: 47,
+        owner: 'Anca',
+        adventures: [],
+        health: 100,
+        image: 'dino-kennel-images/Walker.jpeg'
       }
 ];
 
@@ -175,8 +225,8 @@ const printDinos = (dinoArray) => {
         domString += '</div>';
         domString += '</div>';
         domString += '<button class="btn btn-outline-dark single-dino"><i class="fas fa-eye"></i></button>';
-        domString += '<button type="button" class="btn btn-success feed-dino">Feed Me</button>';
-        domString += '<button type="button" class="btn btn-dark delete-dino">Delete</button>';
+        domString += '<button type="button" class="btn btn-success feed-dino"><i class="fas fa-hamburger"></i></button>';
+        domString += '<button type="button" class="btn btn-dark delete-dino"><i class="fas fa-trash-alt"></i></button>';
         domString += '</div>';
         domString += '</div>';
         domString += '</div>';
@@ -220,8 +270,8 @@ const hospitalDomStringBuilder = (dinoArray) => {
         domString += '</div>';
         domString += '</div>';
         domString += '<button class="btn btn-outline-dark single-dino"><i class="fas fa-eye"></i></button>';
-        domString += '<button type="button" class="btn btn-success feed-dino">Feed Me</button>';
-        domString += '<button type="button" class="btn btn-dark delete-dino">Delete</button>';
+        domString += '<button type="button" class="btn btn-success feed-dino"><i class="fas fa-hamburger"></i></button>';
+        domString += '<button type="button" class="btn btn-dark delete-dino"><i class="fas fa-trash-alt"></i></button>';
         domString += '</div>';
         domString += '</div>';
         domString += '</div>';
