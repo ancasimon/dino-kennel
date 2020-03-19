@@ -1,7 +1,11 @@
 body {
-    background-color: grey;
+    background-color: lightgrey;
 }
 
-.hospital-section {
-    background-color: red;
+#hospital {
+    background-color: darkred;
+}
+
+#graveyard {
+    background-color:black;
 }
