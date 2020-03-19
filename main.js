@@ -131,52 +131,52 @@ const dinos = [
 const adventures = [
     {
       id: 'adventure1',
-      title: 'BRAWL',
+      title: 'Archery',
       healthHit: 50
     },
     {
       id: 'adventure2',
-      title: 'Cave exploration',
-      healthHit: 10
+      title: 'Baking',
+      healthHit: 2
     },
     {
       id: 'adventure3',
+      title: 'Brawling',
+      healthHit: 25
+    },
+    {
+      id: 'adventure4',
+      title: 'Caving',
+      healthHit: 20
+    },
+    {
+      id: 'adventure5',
+      title: 'Chasing unicorns',
+      healthHit: 15
+    },
+    {
+      id: 'adventure6',
+      title: 'Digging underwater',
+      healthHit: 10
+    },
+    {
+      id: 'adventure7',
+      title: 'Fishing',
+      healthHit: 7
+    },
+    {
+      id: 'adventure8',
       title: 'Hiking',
       healthHit: 1
     },
     {
-      id: 'adventure4',
-      title: 'Playing in traffic',
-      healthHit: 3
-    },
-    {
-      id: 'adventure5',
-      title: 'Baking',
-      healthHit: 10
-    },
-    {
-      id: 'adventure6',
-      title: 'Archery',
-      healthHit: 4
-    },
-    {
-      id: 'adventure7',
-      title: 'Underwater digging',
-      healthHit: 99
-    },
-    {
-      id: 'adventure8',
-      title: 'Swimming',
-      healthHit: 3
-    },
-    {
       id: 'adventure9',
-      title: 'Fishing',
+      title: 'Playing in traffic',
       healthHit: 23
     },
     {
       id: 'adventure10',
-      title: 'Chasing unicorns',
+      title: 'Swimming',
       healthHit: 50
     }
   ];
@@ -380,18 +380,21 @@ const printButtons = (divId) => {
 const printDinos = (dinoArray, divId) => {
     let domString = '';
     if (divId==='kennel') {
+      domString += '<div class="container kennel">';
       domString += '<h6 class="section-header">Here are our friends who are doing great:</h6>';
       domString += '<div class="d-flex flex-wrap">';
     } else if (divId==='hospital') {
+      domString += '<div class="container hospital">';
       domString += '<h6 class="section-header">Here are our friends who need some TLC:</h6>';
       domString += '<div class="d-flex flex-wrap">';
     } else if (divId==='graveyard') {
+      domString += '<div class="container graveyard">';
       domString += '<h6 class="section-header">Here are our friends whom we miss dearly:</h6>';
       domString += '<div class="d-flex flex-wrap">';
     };
     for (let i=0; i < dinoArray.length; i++) {
         domString += '<div class="col-4">';
-        domString += `<div id="${dinoArray[i].id}" class="card w-50 border-dark mb-3">`;
+        domString += `<div id="${dinoArray[i].id}" class="card border-dark mb-3">`;
         domString += `<img class="card-img-top dino-photo vh-25% mx-auto mt-1 rounded-lg" style="width: 250px;" src="${dinoArray[i].image}" alt="${dinoArray[i].alt}">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
@@ -404,6 +407,7 @@ const printDinos = (dinoArray, divId) => {
         domString += '</div>';
         domString += '</div>';
     }
+    domString += '</div>';
     domString += '</div>';
     printToDom(divId, domString);
 };
@@ -527,6 +531,36 @@ const buildAllDinos = () => {
     addEvents();
 };
 
+const onlyByOwner = (owner) => {
+  const groupOfDinos = [];
+  for (let i=0; i < dinos.length; i++) {
+      if (dinos[i].owner === 'Anca') {
+          groupOfDinos.push(dinos[i]);
+      };
+  };
+  buildAllDinos(groupOfDinos);
+};
+
+const onlyByAdventure = (adventure) => {
+  const groupOfDinos = [];
+  for (let i=0; i < dinos.length; i++) {
+      if (dinos[i].adventures.includes ('Archery')) {
+          groupOfDinos.push(dinos[i]);
+      };
+  };
+  buildAllDinos(groupOfDinos);
+};
+
+const events = () => {
+  console.log("clicked owner filter");
+  document.getElementById('Anca').addEventListener('click', onlyByOwner('Anca'));
+  console.log("clicked adv filter");
+  document.getElementById('archery').addEventListener('click', onlyByAdventure('Archery'));
+}; 
+
+console.log(onlyByOwner('Anca'));
+
+
 // const alertNewDinoValidation = () => {
 //   $('#submit-new-dino').modal('show');
 // };
@@ -546,6 +580,7 @@ const init = () => {
   document.getElementById('submit-new-dino').addEventListener('click', newDino);
   // submitEvent();
   buildAllDinos();
+  events();
 };
 
 init();
