@@ -1,5 +1,9 @@
 body {
-    background-color: lightgrey;
+    background-color: lightpink;
+}
+
+.logo {
+    font-style: italic;
 }
 
 #hospital {
@@ -8,4 +12,11 @@ body {
 
 #graveyard {
     background-color:black;
+}
+
+.section-header {
+    color: white;
+    text-transform: uppercase;
+    padding: 2em;
+    margin-top: 2em;
 }
