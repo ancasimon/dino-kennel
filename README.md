@@ -1,7 +1,7 @@
 # Pet Dinosaur Vet Clinic
 
 ## Description
-This project showcases all the vanilla javascript we learned in the first part of our front-end program, the Foundations milestone. It is designed to be a record-keeping application for a pet dinosaur veterinary clinic.
+This application tracks patients at a pet dinosaur veterinary clinic. This project showcases all the vanilla javascript we learned in the first part of our front-end program, the Foundations milestone. 
 
 Feature List
 1. Healthy dinos get displayed in the kennel
@@ -17,7 +17,7 @@ Feature List
 
 ## Screenshots
 ##### Home Page
-![Home Page](./dino-kennel-images/home-page.png)
+![Home Page](./dino-kennel-images/home.png)
 ##### Hospital Section
 ![Hospital Section](./dino-kennel-images/hospital.png)
 ##### Graveyard Section

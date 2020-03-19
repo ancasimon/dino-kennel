@@ -2,7 +2,9 @@ body {
     background-color: lightgrey;
 }
 
-.logo {
+.intro {
+    padding-top: 100px;
+    padding-bottom: 20px;
     font-style: italic;
 }
 
@@ -36,3 +38,6 @@ body {
     margin-top: 2em;
 }
 
+.nav-link {
+    color: darkslategray;
+}
