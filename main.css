@@ -5,12 +5,15 @@ body {
 .intro {
     padding-top: 100px;
     padding-bottom: 20px;
-    font-style: italic;
 }
 
 .filter {
     padding-left: 5em;
     padding-top: 2em;
+}
+
+.picture {
+    border-radius: 50%;
 }
 
 .kennel {

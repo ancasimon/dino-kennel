@@ -248,7 +248,6 @@ const viewSingleDino = (e) => {
     domString +=            `<p>Age: ${selectedDino.age}</p>`;
     domString +=            `<p>Type: ${selectedDino.type}</p>`;
     domString +=            `<p>Owner: ${selectedDino.owner}</p>`;
-    domString +=            `<p>Health Score:</p>`;
     domString +=            printProgress(selectedDino, selectedDino.health < 1 ? 'graveyard' : 'single-view');
     domString +=        '</div>';
     domString +=        '<div class="col-4">';
@@ -357,7 +356,7 @@ const printProgress = (dino, divId) => {
   let domString = '';
   if (divId !== 'graveyard') {
     domString += '<div class="progress" style="height: 30px;">';
-    domString += `<div class="progress-bar progress-bar-striped ${dino.health < 40 ? 'bg-danger' : 'bg-success'}" role="progressbar" style="width: ${dino.health}%" aria-valuenow="${dino.health}" aria-valuemin="0" aria-valuemax="100">${dino.health}%</div>`;
+    domString += `<div class="progress-bar progress-bar-striped ${dino.health < 40 ? 'bg-danger' : 'bg-success'}" role="progressbar" style="width: ${dino.health}%" aria-valuenow="${dino.health}" aria-valuemin="0" aria-valuemax="100">Health: ${dino.health}%</div>`;
     domString += '</div>';
   } else {
     domString += '<div><i class="fas fa-skull-crossbones fa-3x"></i></div>';
@@ -395,12 +394,9 @@ const printDinos = (dinoArray, divId) => {
     for (let i=0; i < dinoArray.length; i++) {
         domString += '<div class="col-4">';
         domString += `<div id="${dinoArray[i].id}" class="card border-dark mb-3">`;
-        domString += `<img class="card-img-top dino-photo vh-25% mx-auto mt-1 rounded-lg" style="width: 250px;" src="${dinoArray[i].image}" alt="${dinoArray[i].alt}">`;
+        domString += `<img class="card-img-top dino-photo vh-25% mx-auto mt-2 picture" style="width: 250px;" src="${dinoArray[i].image}" alt="${dinoArray[i].alt}">`;
         domString += '<div class="card-body">';
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
-        if (divId !== 'graveyard') {
-          domString += `<p class="card-text">Health Score:</p>`;
-        }
         domString += printProgress(dinoArray[i], divId);
         domString += printButtons(divId);
         domString += '</div>';
