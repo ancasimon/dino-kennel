@@ -3,39 +3,49 @@ const dinos = [
         id: 'dino1',
         name: 'Annie',
         type: 'Ankylosaurus',
+        pronunciation: 'ang-KILE-uh-SAWR-us',
         age: 100,
         owner: 'Zoe',
         adventures: [],
         health: 99,
         image: 'dino-kennel-images/Annie.jpeg',
-        alt: 'Picture of an Ankylosaurus'
+        alt: 'Picture of an Ankylosaurus',
+        description: 'Ankylosaurus was covered with bony plates of armor and had a dangerous clubbed tail that it could swing to infect severe injury on its predators.',
+        isCarnivorous: false
       },
       {
         id: 'dino2',
         name: 'Brach',
         type: 'Brachiosaurus',
+        pronunciation: 'BRAK-e-o-SAWR-us',
         age: 100,
         owner: 'Luke',
         adventures: [],
         health: 1,
         image: 'dino-kennel-images/Brach.jpeg',
-        alt: 'Picture of a Brachiosaurus'
+        alt: 'Picture of a Brachiosaurus',
+        description: 'This plant-eating dinosaur was one of the largest animals known to have walked the earth. Standing up to 50 feet tall, its neck was 6 times longer than a giraffe\'s.',
+        isCarnivorous: false
       },
       {
         id: 'dino3',
         name: 'Flipper',
         type: 'Pleisiosaurus',
+        pronunciation: 'PLEE-see-uh-SAWR-us',
         age: 50,
         owner: 'Mary',
         adventures: [],
         health: 45,
         image: 'dino-kennel-images/Flipper.jpeg',
-        alt: 'Picture of a Pleisiosaurus'
+        alt: 'Picture of a Pleisiosaurus',
+        description: 'This marine dinosaur had 4 wide flippers that propelled it through the water with ease. Its wide jaws and razor-sharp teeth allowed it to catch its prey just as easily.',
+        isCarnivorous: true
       },
       {
         id: 'dino4',
         name: 'Lizzie',
         type: 'Tyrannosaurus',
+        pronunciation: 'tye-RAN-uh-SAWR-us',
         age: 55,
         owner: 'Anca',
         adventures: [
@@ -54,12 +64,15 @@ const dinos = [
         ],
         health: 70,
         image: 'dino-kennel-images/Lizzie.jpeg',
-        alt: 'Picture of a Tyrannosaurus'
+        alt: 'Picture of a Tyrannosaurus',
+        description: 'Earning its name, which means \"tyrant lizzard king\", Tyrannosaurus Rex had a massive skull with powerful jaws able to eat up to 500 pounds of meat and bones in just one bite. This popular prehistoric predator can also be distinguished by its huge legs and small arms.',
+        isCarnivorous: true
       },
       {
         id: 'dino5',
         name: 'Perry',
         type: 'Parasaurolophus',
+        pronunciation: 'par-ah-SAWR-OL-uh-fus',
         age: 20,
         owner: 'Greg',
         adventures: [
@@ -78,34 +91,43 @@ const dinos = [
         ],
         health: 5,
         image: 'dino-kennel-images/Perry.jpeg',
-        alt: 'Picture of a Parasaurolophus'
+        alt: 'Picture of a Parasaurolophus',
+        description: 'The large crest on its head is an identifying characteristic of the Parasaurolophus. It is believed this crest helped the dinosaur hear and regulate its body temperature.',
+        isCarnivorous: false
       }, 
       {
         id: 'dino6',
         name: 'Punk',
         type: 'Stegosaurus',
+        pronunciation: 'STEG-uh-SAWR-us',
         age: 10,
         owner: 'Zoe',
         adventures: [],
         health: 0,
         image: 'dino-kennel-images/Punk.jpeg',
-        alt: 'Picture of a Stegosaurus'
+        alt: 'Picture of a Stegosaurus',
+        description: 'Stegosaurus is distinguished by the double row of large triangular plates along its back and the four long spikes on its tail. Some scientists believe the plates worked like solar panels to provide the Stegosaurus with body heat.',
+        isCarnivorous: false
       },
       {
         id: 'dino7',
         name: 'Spiney',
         type: 'Spinosaurus',
+        pronunciation: 'SPY-nuh-SAWR-us',
         age: 76,
         owner: 'Luke',
         adventures: [],
         health: 0,
         image: 'dino-kennel-images/Spiney.jpeg',
-        alt: 'Picture of a Spinosaurus'
+        alt: 'Picture of a Spinosaurus',
+        description: 'The Spinosaurus is easily identified by the giant sail on its back. It gets its name, which means \"spine lizzard\", from the up to 7-feet spines that make up this sail.',
+        isCarnivorous: true
       },
       {
         id: 'dino8',
         name: 'Walker',
         type: 'Hypacrosaurus',
+        pronunciation: 'hye-PACK-ruh-SAWR-us',
         age: 47,
         owner: 'Anca',
         adventures: [
@@ -124,7 +146,9 @@ const dinos = [
         ],
         health: 30,
         image: 'dino-kennel-images/Walker.jpeg',
-        alt: 'Picture of a Hypacrosaurus'
+        alt: 'Picture of a Hypacrosaurus',
+        description: 'Thsi upright-walking dinosaur is distinguished by the crest on its head and row of spines along its back.',
+        isCarnivorous: false
       }
 ];
 
@@ -237,20 +261,29 @@ const viewSingleDino = (e) => {
     const dinoId = e.target.closest('.card').id;
     const selectedDino = dinos.find((currentDino) => dinoId === currentDino.id);
     let domString = '';
+    domString += '<div class="container d-inline-block text-right">';
     domString += '<button id="close-single-view" type="button" class="btn btn-dark"><i class="fas fa-window-close"></i></button>';
+    domString += '</div>';
     domString += '<div class="container">';
     domString +=    '<div class="row">';
-    domString +=        '<div class="col-4">';
+    domString +=        '<div class="col-md-4">';
     domString +=            `<img class="img-fluid vh-25" style="width: 250px;" src="${selectedDino.image}" alt="${selectedDino.alt}"></img>`;
     domString +=        '</div>';
-    domString +=        '<div class="col-4">';
+    domString +=        '<div class="col-md-4">';
     domString +=            `<h2>Name: ${selectedDino.name}</h2>`;
+    if (selectedDino.isCarnivorous === true) {
+      domString +=            '<p><i class="fas fa-drumstick-bite larger"></i></p>';
+    } else {
+      domString +=            '<p><i class="fas fa-carrot larger"></i></p>';
+    }
     domString +=            `<p>Age: ${selectedDino.age}</p>`;
     domString +=            `<p>Type: ${selectedDino.type}</p>`;
+    domString +=            `<p>(that is, "${selectedDino.pronunciation}")</p>`;
+    domString +=            `<p>${selectedDino.description}</p>`;
     domString +=            `<p>Owner: ${selectedDino.owner}</p>`;
     domString +=            printProgress(selectedDino, selectedDino.health < 1 ? 'graveyard' : 'single-view');
     domString +=        '</div>';
-    domString +=        '<div class="col-4">';
+    domString +=        '<div class="col-md-4">';
     domString +=          '<h3>See what your pet dino\'s been up to\!</h3>';
     domString +=          adventureTableBuilder(selectedDino.adventures);
     domString +=        '</div>';
@@ -305,11 +338,13 @@ const deleteDinoEvent = (e) => {
 
 // To know which dino to delete with the delete function above, we need to add event listeners to the delete buttons on each dino card so that we can then use the action of clicking the Delete button as an event (and thus be able to identify the target of the event and then the parent with the card class and then get that id!!). Once the dino is found, this will trigger the deleteDInoEvent funciton above!!! This is what the findDinoToDelete function below does!
 
-const deleteEvents = () => {
+const deleteEvents = (divId) => {
+  if (divId !== 'graveyard') { 
     const dinoDeleteButtons = document.getElementsByClassName('delete-dino');
     for (let i=0; i <dinoDeleteButtons.length; i++) {
         dinoDeleteButtons[i].addEventListener('click', deleteDinoEvent);
     }
+  }
 };
 
 const feedMe = (e) => {
@@ -325,11 +360,13 @@ const feedMe = (e) => {
 };
 
 
-const feedEvents = () => {
+const feedEvents = (divId) => {
+  if (divId !== 'graveyard') { 
     const dinoFeedButtons = document.getElementsByClassName('feed-dino');
     for (let i = 0; i < dinoFeedButtons.length; i++) {
         dinoFeedButtons[i].addEventListener('click', feedMe);
     }
+  }
 };
 
 const addAdventure = (e) => {
@@ -345,11 +382,13 @@ const addAdventure = (e) => {
   buildAllDinos(dinos);
 };
 
-const advEvents = () => {
+const advEvents = (divId) => {
+  if (divId !== 'graveyard') { 
   const advButtons = document.getElementsByClassName('adv-button');
   for (let i=0; i<advButtons.length; i++) {
       advButtons[i].addEventListener('click', addAdventure);
   }
+}
 };
 
 const printProgress = (dino, divId) => {
@@ -392,7 +431,7 @@ const printDinos = (dinoArray, divId) => {
       domString += '<div class="d-flex flex-wrap">';
     };
     for (let i=0; i < dinoArray.length; i++) {
-        domString += '<div class="col-4">';
+        domString += '<div class="col-md-4">';
         domString += `<div id="${dinoArray[i].id}" class="card border-dark mb-3">`;
         domString += `<img class="card-img-top dino-photo vh-25% mx-auto mt-2 picture" style="width: 250px;" src="${dinoArray[i].image}" alt="${dinoArray[i].alt}">`;
         domString += '<div class="card-body">';
@@ -480,8 +519,7 @@ const addEvents = () => {
 // };
 
 
-const newDino = (e) => {
-    e.preventDefault();
+const newDino = () => {
     const brandNewDino = {
         id: `dino${dinos.length+1}`,
         name: document.getElementById('dino-name').value,
@@ -518,6 +556,7 @@ const clearAllDinos = () => {
     printToDom('kennel', '');
     printToDom('hospital','');
     printToDom('graveyard', '');
+    $('#filters').addClass('hide');
 };
 
 const buildAllDinos = () => {
@@ -527,13 +566,15 @@ const buildAllDinos = () => {
     addEvents();
 };
 
-const onlyByOwner = (owner) => {
-  const groupOfDinos = [];
-  for (let i=0; i < dinos.length; i++) {
-      if (dinos[i].owner === 'Anca') {
-          groupOfDinos.push(dinos[i]);
-      };
-  };
+const onlyByOwner = (e) => {
+  const owner = e.target.id;
+  const groupOfDinos = dinos.filter((thisDino) => thisDino.owner === owner);
+
+  // for (let i=0; i < dinos.length; i++) {
+  //     if (dinos[i].owner === owner) {
+  //         groupOfDinos.push(dinos[i]);
+  //     }
+  // };
   buildAllDinos(groupOfDinos);
 };
 
@@ -548,33 +589,31 @@ const onlyByAdventure = (adventure) => {
 };
 
 const events = () => {
-  console.log("clicked owner filter");
-  document.getElementById('Anca').addEventListener('click', onlyByOwner('Anca'));
-  console.log("clicked adv filter");
-  document.getElementById('archery').addEventListener('click', onlyByAdventure('Archery'));
+  $('.owner').click(onlyByOwner);
+  // document.getElementsByClassName('adv').addEventListener('click', onlyByAdventure);
 }; 
 
-console.log(onlyByOwner('Anca'));
+// console.log(onlyByOwner('Anca'));
 
 
-// const alertNewDinoValidation = () => {
-//   $('#submit-new-dino').modal('show');
-// };
+const alertNewDinoValidation = () => {
+  $('#newDinoModal').modal('show');
+};
 
-// const submitEvent = () => {
-//   if (document.getElementById('dino-name').value !== '') {
-//     newDino();
-//     } else {
-//       alertNewDinoValidation();
-//     } 
-// };
+const submitEvent = (event) => {
+  event.preventDefault();
+  if (document.getElementById('dino-name').value !== '') {
+    newDino();
+    } else {
+      alertNewDinoValidation();
+    } 
+};
 
 
 
 // In the init function, we add the event listener for the click event - when user clicks the button with the submit-new-dino id, then the newDino function gets called. 
 const init = () => {
-  document.getElementById('submit-new-dino').addEventListener('click', newDino);
-  // submitEvent();
+  document.getElementById('submit-new-dino').addEventListener('click', submitEvent);
   buildAllDinos();
   events();
 };

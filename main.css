@@ -12,35 +12,46 @@ body {
     padding-top: 2em;
 }
 
+.hide {
+	display: none;
+}
+
 .picture {
     border-radius: 50%;
 }
 
 .kennel {
-    background-color: pink;
+    background-color: #D0F0C0;
     border: lightgrey;
     box-shadow: 10px 10px 8px 10px #888888;
 }
 
 .hospital {
-    background-color: darkred;
+    background-color: pink;
     border: lightgrey;
     box-shadow: 10px 10px 8px 10px #888888;
 }
 
 .graveyard {
-    background-color:black;
+    background-color:grey;
     border: lightgrey;
     box-shadow: 10px 10px 8px 10px #888888;
 }
 
 .section-header {
-    color: white;
     text-transform: uppercase;
-    padding: 2em;
-    margin-top: 2em;
+    padding-top: 2em;
+    margin: 2em;
 }
 
 .nav-link {
     color: darkslategray;
+}
+
+.right-align {
+    text-align: end;
+}
+
+.larger {
+    font-size: 3em;
 }
