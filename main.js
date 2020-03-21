@@ -147,7 +147,7 @@ const dinos = [
         health: 30,
         image: 'dino-kennel-images/Walker.jpeg',
         alt: 'Picture of a Hypacrosaurus',
-        description: 'Thsi upright-walking dinosaur is distinguished by the crest on its head and row of spines along its back.',
+        description: 'This upright-walking dinosaur is distinguished by the crest on its head and row of spines along its back.',
         isCarnivorous: false
       }
 ];
