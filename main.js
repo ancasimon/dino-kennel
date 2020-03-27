@@ -8,7 +8,7 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 99,
-        image: 'dino-kennel-images/Annie.jpeg',
+        image: 'dino-kennel-images/Annie.jpg',
         alt: 'Picture of an Ankylosaurus',
         description: 'Ankylosaurus was covered with bony plates of armor and had a dangerous clubbed tail that it could swing to infect severe injury on its predators.',
         isCarnivorous: false
@@ -22,7 +22,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 1,
-        image: 'dino-kennel-images/Brach.jpeg',
+        image: 'dino-kennel-images/Brach.jpg',
         alt: 'Picture of a Brachiosaurus',
         description: 'This plant-eating dinosaur was one of the largest animals known to have walked the earth. Standing up to 50 feet tall, its neck was 6 times longer than a giraffe\'s.',
         isCarnivorous: false
@@ -36,7 +36,7 @@ const dinos = [
         owner: 'Mary',
         adventures: [],
         health: 45,
-        image: 'dino-kennel-images/Flipper.jpeg',
+        image: 'dino-kennel-images/Flipper.jpg',
         alt: 'Picture of a Pleisiosaurus',
         description: 'This marine dinosaur had 4 wide flippers that propelled it through the water with ease. Its wide jaws and razor-sharp teeth allowed it to catch its prey just as easily.',
         isCarnivorous: true
@@ -63,7 +63,7 @@ const dinos = [
             }
         ],
         health: 70,
-        image: 'dino-kennel-images/Lizzie.jpeg',
+        image: 'dino-kennel-images/Lizzie.jpg',
         alt: 'Picture of a Tyrannosaurus',
         description: 'Earning its name, which means \"tyrant lizzard king\", Tyrannosaurus Rex had a massive skull with powerful jaws able to eat up to 500 pounds of meat and bones in just one bite. This popular prehistoric predator can also be distinguished by its huge legs and small arms.',
         isCarnivorous: true
@@ -90,7 +90,7 @@ const dinos = [
             }
         ],
         health: 5,
-        image: 'dino-kennel-images/Perry.jpeg',
+        image: 'dino-kennel-images/Perry.jpg',
         alt: 'Picture of a Parasaurolophus',
         description: 'The large crest on its head is an identifying characteristic of the Parasaurolophus. It is believed this crest helped the dinosaur hear and regulate its body temperature.',
         isCarnivorous: false
@@ -104,7 +104,7 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 0,
-        image: 'dino-kennel-images/Punk.jpeg',
+        image: 'dino-kennel-images/Punk.jpg',
         alt: 'Picture of a Stegosaurus',
         description: 'Stegosaurus is distinguished by the double row of large triangular plates along its back and the four long spikes on its tail. Some scientists believe the plates worked like solar panels to provide the Stegosaurus with body heat.',
         isCarnivorous: false
@@ -118,7 +118,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 0,
-        image: 'dino-kennel-images/Spiney.jpeg',
+        image: 'dino-kennel-images/Spiney.jpg',
         alt: 'Picture of a Spinosaurus',
         description: 'The Spinosaurus is easily identified by the giant sail on its back. It gets its name, which means \"spine lizzard\", from the up to 7-feet spines that make up this sail.',
         isCarnivorous: true
@@ -145,9 +145,37 @@ const dinos = [
         }
         ],
         health: 30,
-        image: 'dino-kennel-images/Walker.jpeg',
+        image: 'dino-kennel-images/Walker.jpg',
         alt: 'Picture of a Hypacrosaurus',
         description: 'This upright-walking dinosaur is distinguished by the crest on its head and row of spines along its back.',
+        isCarnivorous: false
+      },
+      {
+        id: 'dino9',
+        name: 'Rhino',
+        type: 'Styracosaurus',
+        pronunciation: 'stih-RAK-uh-SAWR-us',
+        age: 500,
+        owner: 'Anca',
+        adventures: [],
+        health: 31,
+        image: 'dino-kennel-images/Rhino.jpg',
+        alt: 'Picture of a Styracosaurus',
+        description: 'Styracosaurus is easy to identify. It had a short frill along its head with 6 long spikes along the edge and a snout with a 2-foot horn that it used for self-defense.',
+        isCarnivorous: false
+      },
+      {
+        id: 'dino10',
+        name: 'Leif',
+        type: 'Anatotitan',
+        pronunciation: 'an-AT-oh-TITE-an',
+        age: 50,
+        owner: 'Anca',
+        adventures: [],
+        health: 35,
+        image: 'dino-kennel-images/Leif.jpg',
+        alt: 'Picture of a Anatotitan',
+        description: 'Named for its duck bill, the Anatotitan had hundreds of cheek teeth to grind its dinner of prehistoric plants. This dinosaur can also be distinguished by its large back legs and long tail.',
         isCarnivorous: false
       }
 ];
@@ -262,19 +290,19 @@ const viewSingleDino = (e) => {
     const selectedDino = dinos.find((currentDino) => dinoId === currentDino.id);
     let domString = '';
     domString += '<div class="container d-inline-block text-right">';
-    domString += '<button id="close-single-view" type="button" class="btn btn-dark"><i class="fas fa-window-close"></i></button>';
+    domString += '<button id="close-single-view" type="button" class="btn btn-dark mb-4 mt-4"><i class="fas fa-window-close"></i></button>';
     domString += '</div>';
     domString += '<div class="container">';
     domString +=    '<div class="row">';
     domString +=        '<div class="col-md-4">';
-    domString +=            `<img class="img-fluid vh-25" style="width: 250px;" src="${selectedDino.image}" alt="${selectedDino.alt}"></img>`;
+    domString +=            `<img class="img-fluid vh-25 picture" style="width: 250px;" src="${selectedDino.image}" alt="${selectedDino.alt}"></img>`;
     domString +=        '</div>';
     domString +=        '<div class="col-md-4">';
     domString +=            `<h2>Name: ${selectedDino.name}</h2>`;
     if (selectedDino.isCarnivorous === true) {
-      domString +=            '<p><i class="fas fa-drumstick-bite larger"></i></p>';
+      domString +=            '<p><i class="fas fa-drumstick-bite larger meat"></i></p>';
     } else {
-      domString +=            '<p><i class="fas fa-carrot larger"></i></p>';
+      domString +=            '<p><i class="fas fa-leaf larger veggie"></i></p>';
     }
     domString +=            `<p>Age: ${selectedDino.age}</p>`;
     domString +=            `<p>Type: ${selectedDino.type}</p>`;
@@ -568,33 +596,45 @@ const buildAllDinos = () => {
 
 const onlyByOwner = (e) => {
   const owner = e.target.id;
-  const groupOfDinos = dinos.filter((thisDino) => thisDino.owner === owner);
-
-  // for (let i=0; i < dinos.length; i++) {
-  //     if (dinos[i].owner === owner) {
-  //         groupOfDinos.push(dinos[i]);
-  //     }
-  // };
+  console.log('id on dropdown option', owner);
+  const groupOfDinos = [];
+  for (let i=0; i< dinos.length; i++) {
+    if (dinos[i].owner === owner) {
+      groupOfDinos.push(dinos[i]);
+    };
+  };
+  // const groupOfDinos = dinos.filter((thisDino) => thisDino.owner === owner);
   buildAllDinos(groupOfDinos);
 };
 
-const onlyByAdventure = (adventure) => {
+const allOwners = () => {
+  buildAllDinos();
+};
+
+const onlyByAdventure = (e) => {
+  const adv = e.target.id;
+  console.log('id on dropdown adv option', adv);
   const groupOfDinos = [];
   for (let i=0; i < dinos.length; i++) {
-      if (dinos[i].adventures.includes ('Archery')) {
-          groupOfDinos.push(dinos[i]);
+      if (dinos[i].adventures.includes(adv)) {
+        console.log('adventure found', adv);
+        groupOfDinos.push(dinos[i]);
       };
   };
   buildAllDinos(groupOfDinos);
 };
 
+const allAdventures = () => {
+  buildAllDinos();
+};
+
 const events = () => {
-  $('.owner').click(onlyByOwner);
+  $('body').on('click', '.owner', onlyByOwner);
+  $('body').on('click', '#All', allOwners);
+  $('body').on('click', '.adv', onlyByAdventure);
+  $('body').on('click', '#all-adv', allAdventures);
   // document.getElementsByClassName('adv').addEventListener('click', onlyByAdventure);
 }; 
-
-// console.log(onlyByOwner('Anca'));
-
 
 const alertNewDinoValidation = () => {
   $('#newDinoModal').modal('show');
@@ -608,7 +648,6 @@ const submitEvent = (event) => {
       alertNewDinoValidation();
     } 
 };
-
 
 
 // In the init function, we add the event listener for the click event - when user clicks the button with the submit-new-dino id, then the newDino function gets called. 

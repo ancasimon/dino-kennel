@@ -22,6 +22,8 @@ Feature List
 ![Hospital Section](./dino-kennel-images/hospital.png)
 ##### Graveyard Section
 ![Graveyard Section](./dino-kennel-images/graveyard.png)
+##### Single Dino View
+![Single Dino View](./dino-kennel-images/single-view.png)
 
 ## How to Run
 1. Clone down this repo.
