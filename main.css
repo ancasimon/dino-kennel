@@ -55,3 +55,11 @@ body {
 .larger {
     font-size: 3em;
 }
+
+.meat {
+    color: darkred;
+}
+
+.veggie {
+    color: darkgreen;
+}
