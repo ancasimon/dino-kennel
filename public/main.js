@@ -8,7 +8,7 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 99,
-        image: 'dino-kennel-images/Annie.jpg',
+        image: './dino-kennel-images/Annie.jpg',
         alt: 'Picture of an Ankylosaurus',
         description: 'Ankylosaurus was covered with bony plates of armor and had a dangerous clubbed tail that it could swing to infect severe injury on its predators.',
         isCarnivorous: false
@@ -22,7 +22,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 1,
-        image: 'dino-kennel-images/Brach.jpg',
+        image: './dino-kennel-images/Brach.jpg',
         alt: 'Picture of a Brachiosaurus',
         description: 'This plant-eating dinosaur was one of the largest animals known to have walked the earth. Standing up to 50 feet tall, its neck was 6 times longer than a giraffe\'s.',
         isCarnivorous: false
@@ -36,7 +36,7 @@ const dinos = [
         owner: 'Mary',
         adventures: [],
         health: 45,
-        image: 'dino-kennel-images/Flipper.jpg',
+        image: './dino-kennel-images/Flipper.jpg',
         alt: 'Picture of a Pleisiosaurus',
         description: 'This marine dinosaur had 4 wide flippers that propelled it through the water with ease. Its wide jaws and razor-sharp teeth allowed it to catch its prey just as easily.',
         isCarnivorous: true
@@ -63,7 +63,7 @@ const dinos = [
             }
         ],
         health: 70,
-        image: 'dino-kennel-images/Lizzie.jpg',
+        image: './dino-kennel-images/Lizzie.jpg',
         alt: 'Picture of a Tyrannosaurus',
         description: 'Earning its name, which means \"tyrant lizzard king\", Tyrannosaurus Rex had a massive skull with powerful jaws able to eat up to 500 pounds of meat and bones in just one bite. This popular prehistoric predator can also be distinguished by its huge legs and small arms.',
         isCarnivorous: true
@@ -90,7 +90,7 @@ const dinos = [
             }
         ],
         health: 5,
-        image: 'dino-kennel-images/Perry.jpg',
+        image: './dino-kennel-images/Perry.jpg',
         alt: 'Picture of a Parasaurolophus',
         description: 'The large crest on its head is an identifying characteristic of the Parasaurolophus. It is believed this crest helped the dinosaur hear and regulate its body temperature.',
         isCarnivorous: false
@@ -104,7 +104,7 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 0,
-        image: 'dino-kennel-images/Punk.jpg',
+        image: './dino-kennel-images/Punk.jpg',
         alt: 'Picture of a Stegosaurus',
         description: 'Stegosaurus is distinguished by the double row of large triangular plates along its back and the four long spikes on its tail. Some scientists believe the plates worked like solar panels to provide the Stegosaurus with body heat.',
         isCarnivorous: false
@@ -118,7 +118,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 0,
-        image: 'dino-kennel-images/Spiney.jpg',
+        image: './dino-kennel-images/Spiney.jpg',
         alt: 'Picture of a Spinosaurus',
         description: 'The Spinosaurus is easily identified by the giant sail on its back. It gets its name, which means \"spine lizzard\", from the up to 7-feet spines that make up this sail.',
         isCarnivorous: true
@@ -145,7 +145,7 @@ const dinos = [
         }
         ],
         health: 30,
-        image: 'dino-kennel-images/Walker.jpg',
+        image: './dino-kennel-images/Walker.jpg',
         alt: 'Picture of a Hypacrosaurus',
         description: 'This upright-walking dinosaur is distinguished by the crest on its head and row of spines along its back.',
         isCarnivorous: false
@@ -159,7 +159,7 @@ const dinos = [
         owner: 'Anca',
         adventures: [],
         health: 31,
-        image: 'dino-kennel-images/Rhino.jpg',
+        image: './dino-kennel-images/Rhino.jpg',
         alt: 'Picture of a Styracosaurus',
         description: 'Styracosaurus is easy to identify. It had a short frill along its head with 6 long spikes along the edge and a snout with a 2-foot horn that it used for self-defense.',
         isCarnivorous: false
@@ -173,7 +173,7 @@ const dinos = [
         owner: 'Anca',
         adventures: [],
         health: 35,
-        image: 'dino-kennel-images/Leif.jpg',
+        image: './dino-kennel-images/Leif.jpg',
         alt: 'Picture of a Anatotitan',
         description: 'Named for its duck bill, the Anatotitan had hundreds of cheek teeth to grind its dinner of prehistoric plants. This dinosaur can also be distinguished by its large back legs and long tail.',
         isCarnivorous: false
