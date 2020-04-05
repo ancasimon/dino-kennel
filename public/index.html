@@ -10,24 +10,24 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light bg-light fixed-top">
-    <span class="navbar-brand mb-0 h1"><i class="fas fa-clinic-medical"></i> Patient Tracker</span>
-    <ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#hospital">Hospital</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#graveyard">Graveyard</a>
-    </li>
-    </ul>
-  </nav>
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <span class="navbar-brand mb-0 ml-3 h1"><i class="fas fa-clinic-medical"></i> Patient Tracker</span>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#hospital">Hospital</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#graveyard">Graveyard</a>
+            </li>
+        </ul>
+    </nav>
 
-  <div class="col-10 offset-1 intro">
-    <h5>You are logged in to Rosie's Pet Dinosaur Veterinary Clinic. Have a RAWRsome day!</h5>
-  </div>  
+    <div class="col-10 offset-1 intro">
+        <h5>You are logged in to Rosie's Pet Dinosaur Veterinary Clinic. Have a RAWRsome day!</h5>
+    </div>  
 
 <!-- To indent the whole section below, we wrap it in a div and give it a class of col-10 and offset-1: -->
     <div class="col-10 offset-1">
@@ -81,60 +81,19 @@
     Modal to validate data entry for a new dino -->
     <div class="modal fade show" id="newDinoModal" tabindex="-1" role="dialog" aria-labelledby="addDinoSection" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="addDinoSection">Name Field is Required</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addDinoSection">Name Field is Required</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
               The Name field is required in order to register a new pet.
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <div id="filters" class="container">
-    <div class="row">
-    <div class="col filter">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="filterByOwner" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Filter Pets by Owner
-            </button>
-            <div class="dropdown-menu" aria-labelledby="filterByOwner">
-              <button class="dropdown-item owner" id="Anca">Anca</button>
-              <button class="dropdown-item owner" id="Greg">Greg</button>
-              <button class="dropdown-item owner" id="Luke">Luke</button>
-              <button class="dropdown-item owner" id="Mary">Mary</button>
-              <button class="dropdown-item owner" id="Zoe">Zoe</button>
-              <button class="dropdown-item owner" id="All">Remove filter</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col filter">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="filterByAdventure" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Filter Pets by Adventure
-            </button>
-            <div class="dropdown-menu" aria-labelledby="filterByAdventure">
-              <button class="dropdown-item adv" id="archery">Archery</button>
-              <button class="dropdown-item adv" id="brawl">Baking</button>
-              <button class="dropdown-item adv" id="brawl">Brawling</button>
-              <button class="dropdown-item adv" id="cave">Caving</button>
-              <button class="dropdown-item adv" id="unicorns">Chasing unicorns</button>
-              <button class="dropdown-item adv" id="digging">Digging underwater</button>
-              <button class="dropdown-item adv" id="fishing">Fishing</button>
-              <button class="dropdown-item adv" id="hiking">Hiking</button>
-              <button class="dropdown-item adv" id="traffic">Playing in traffic</button>
-              <button class="dropdown-item adv" id="swimming">Swimming</button>
-              <button class="dropdown-item adv" id="all-adv">Remove filter</button>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
 
     <div id="kennel"></div>
     <div id="hospital"></div>

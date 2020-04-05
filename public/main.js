@@ -8,7 +8,7 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 99,
-        image: 'dino-kennel-images/Annie.jpg',
+        image: './dino-kennel-images/Annie.jpg',
         alt: 'Picture of an Ankylosaurus',
         description: 'Ankylosaurus was covered with bony plates of armor and had a dangerous clubbed tail that it could swing to infect severe injury on its predators.',
         isCarnivorous: false
@@ -22,7 +22,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 1,
-        image: 'dino-kennel-images/Brach.jpg',
+        image: './dino-kennel-images/Brach.jpg',
         alt: 'Picture of a Brachiosaurus',
         description: 'This plant-eating dinosaur was one of the largest animals known to have walked the earth. Standing up to 50 feet tall, its neck was 6 times longer than a giraffe\'s.',
         isCarnivorous: false
@@ -36,7 +36,7 @@ const dinos = [
         owner: 'Mary',
         adventures: [],
         health: 45,
-        image: 'dino-kennel-images/Flipper.jpg',
+        image: './dino-kennel-images/Flipper.jpg',
         alt: 'Picture of a Pleisiosaurus',
         description: 'This marine dinosaur had 4 wide flippers that propelled it through the water with ease. Its wide jaws and razor-sharp teeth allowed it to catch its prey just as easily.',
         isCarnivorous: true
@@ -63,7 +63,7 @@ const dinos = [
             }
         ],
         health: 70,
-        image: 'dino-kennel-images/Lizzie.jpg',
+        image: './dino-kennel-images/Lizzie.jpg',
         alt: 'Picture of a Tyrannosaurus',
         description: 'Earning its name, which means \"tyrant lizzard king\", Tyrannosaurus Rex had a massive skull with powerful jaws able to eat up to 500 pounds of meat and bones in just one bite. This popular prehistoric predator can also be distinguished by its huge legs and small arms.',
         isCarnivorous: true
@@ -90,7 +90,7 @@ const dinos = [
             }
         ],
         health: 5,
-        image: 'dino-kennel-images/Perry.jpg',
+        image: './dino-kennel-images/Perry.jpg',
         alt: 'Picture of a Parasaurolophus',
         description: 'The large crest on its head is an identifying characteristic of the Parasaurolophus. It is believed this crest helped the dinosaur hear and regulate its body temperature.',
         isCarnivorous: false
@@ -104,7 +104,7 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 0,
-        image: 'dino-kennel-images/Punk.jpg',
+        image: './dino-kennel-images/Punk.jpg',
         alt: 'Picture of a Stegosaurus',
         description: 'Stegosaurus is distinguished by the double row of large triangular plates along its back and the four long spikes on its tail. Some scientists believe the plates worked like solar panels to provide the Stegosaurus with body heat.',
         isCarnivorous: false
@@ -118,7 +118,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 0,
-        image: 'dino-kennel-images/Spiney.jpg',
+        image: './dino-kennel-images/Spiney.jpg',
         alt: 'Picture of a Spinosaurus',
         description: 'The Spinosaurus is easily identified by the giant sail on its back. It gets its name, which means \"spine lizzard\", from the up to 7-feet spines that make up this sail.',
         isCarnivorous: true
@@ -145,7 +145,7 @@ const dinos = [
         }
         ],
         health: 30,
-        image: 'dino-kennel-images/Walker.jpg',
+        image: './dino-kennel-images/Walker.jpg',
         alt: 'Picture of a Hypacrosaurus',
         description: 'This upright-walking dinosaur is distinguished by the crest on its head and row of spines along its back.',
         isCarnivorous: false
@@ -159,7 +159,7 @@ const dinos = [
         owner: 'Anca',
         adventures: [],
         health: 31,
-        image: 'dino-kennel-images/Rhino.jpg',
+        image: './dino-kennel-images/Rhino.jpg',
         alt: 'Picture of a Styracosaurus',
         description: 'Styracosaurus is easy to identify. It had a short frill along its head with 6 long spikes along the edge and a snout with a 2-foot horn that it used for self-defense.',
         isCarnivorous: false
@@ -173,7 +173,7 @@ const dinos = [
         owner: 'Anca',
         adventures: [],
         health: 35,
-        image: 'dino-kennel-images/Leif.jpg',
+        image: './dino-kennel-images/Leif.jpg',
         alt: 'Picture of a Anatotitan',
         description: 'Named for its duck bill, the Anatotitan had hundreds of cheek teeth to grind its dinner of prehistoric plants. This dinosaur can also be distinguished by its large back legs and long tail.',
         isCarnivorous: false
@@ -238,18 +238,21 @@ const printToDom = (divId, textToPrint) => {
     selectedDiv.innerHTML = textToPrint;
 };
 
-// No - we start defining the single view: When you click the View/eye button on the all dinos page (we assign the same class to all these buttons and then add an event to all of them in the main initial printDionos function's domString - when clicked, they run the viewSingleDino function), then the kennel is emptied/an empty string gets pushed to the div with the 'kennel' id and a new printToDom function runs that creates the single dino view - see the viewSingleDino function. Then we also associate a close function (closeSingleViewEvent) with the Close/X button we have have added to the single View. 
+// NOTES ABOUT BUILDING THE SINGLE DINO VIEW BELOW:
+// Now - we start defining the single view: The goal is that - when you click the View button on the all dinos page - then they run the viewSingleDino function), 
+// To make that happen: we assign the same class to all these View buttons (on all the dino cards) and then add an event to all of them in the main initial printDionos function's domString.
+// Once the View button is clicked, then, the kennel is emptied (an empty string gets pushed to the div with the 'kennel' id) and a new printToDom function runs, which creates the single dino view (which basically replaces the view with all the dinos generated by the printDinos function) - see the viewSingleDino function. 
+// Next - we also associate a close function (closeSingleViewEvent) with the Close button we have have added to the single View. 
 
 const closeSingleViewEvent = () => {
     printToDom('single-view', '');
     buildAllDinos(dinos);
 };
 
-
 // Now - we want to add a way to see the single dino:
-//  - when I click the View/eye button, I want to grab the ID of the parent card - I can do that by using the .closest method and asking it to pull the id of the parent with a class of card(.card) who is closest to my target element - so e.target gives me the target element I clicked on (in our case, the View/eye button; .closest is th emethod looking fo rth enext thing up in the tree of this element; ('.card) tells it that what I am looking for is a parent with a class of card; id then tells it ti pull the id of that parent): 
-// To make all this Worker, I had to give the parent card the unique ID of each dino - see the item in the printDinos domString that does that by using the ${dinoArray[i].id}!
-// .find and other array methods - do a for loop over the dinos array until they meet a condition (specified in the curly brackets/or the second part of the equation (if you use curly brackets, you need to specify "return"  at the beginninginside the curly brackets), afetr the => arrow - the dino id taht I am currently on is the same as the id of a dino in the array): - this is what the find array mnethod does:
+//  When I click the View button, I want to grab the ID of the parent card - I can do that by using the .closest method and asking it to pull the id of the parent with a class of card(.card) that is closest to my target element - so (1) e.target gives me the target element I clicked on (in our case, the View button; (2) .closest is the method looking for the next thing up in the tree of this element; (3) .card tells it that what I am looking for is a parent with a class of card; (4) id then tells it to pull the id of that parent: 
+// To make all this work, I had to give the parent card the unique ID of each dino - see the item in the printDinos domString that does that by using the ${dinoArray[i].id}!
+// .find and other array methods - do a for loop over the dinos' array until they meet a condition (specified in the curly brackets/or the second part of the equation (if you use curly brackets, you need to specify "return"  at the beginning/inside the curly brackets), after the => arrow - the dino id that I am currently on is the same as the id of a dino in the array): - this is what the find array method does:
 // const find = () => {
 //     for (let i= 0; i < dinos.length; i++) {
 //         if(dinoId === dinos[i].id) {
@@ -330,9 +333,9 @@ const singleDinoAddEvents = () => {
 };
 
 // // The feature to increase the dino's health every time you pet him  requires:
-// 1- an event listener thatr is similar to the view single dino event listener - see petEvents below; 
-// 2 - that you use the .closest method that we used earlier in viewSingleDino to get the parent card ID
-// 3 - findIndex to find the index of the selected dino object in the array in order to know which dino's health score we should increase - then you can say dinos[dinoPosition].health = which means that the health value of the dino object in the position specified in the squre brackets.
+// 1- an event listener that is similar to the view single dino event listener - see petEvents below; 
+// 2 - that you use the .closest method that we used earlier in viewSingleDino to get the parent card ID;
+// 3 - findIndex to find the index of the selected dino object in the array in order to know which dino's health score we should increase - then you can say dinos[dinoPosition].health = which means that the health value of the dino object in the position specified in the square brackets.
 
 const dinoHealth = (e) => {
     const dinoId = e.target.closest('.card').id;
@@ -351,20 +354,22 @@ const petEvents = () => {
 };
 
 // This is the function that will delete the dino:
-// 1 - it takes a parameter of the event that is taking place on the page and the it looks for the target of that event and then for the closest parent with a class of a card ('.card); 
-// 2 - Then, once it has the card's id, it uses the findIndex method to identify the position (in he array) of the dino that has the same exact id as the card we just identified (that contains the button that was the target of the event);
+// 1 - it takes a parameter of the event that is taking place on the page and the it looks for the target of that event and then for the closest parent with a class of a card (.card); 
+// 2 - Then, once it has the card's id, it uses the findIndex method to identify the position (in the array) of the dino that has the same exact id as the card we just identified (that contains the button that was the target of the event);
 // 3 - then it removes that dino from the array using the splice method: first, it specified what position to start removing an ID from (the position identified by the dinoPosition variable) and then it specifies the method should remove only 1 item from the array.
-// 4 - then it finally calls the printDinos funciton to print the whole array again - minus the one dino that was removed!! 
+// 4 - then it finally calls the printDinos function to print the whole array again - minus the one dino that was removed!! 
 // 5- we will also add this deleteDinoEvent function to the printDinos funciton so that it gets built into the array when the list of dinos (including the delete buttons) get built!
 
 const deleteDinoEvent = (e) => {
     const dinoId = e.target.closest('.card').id;
     const dinoPosition = dinos.findIndex((currentDino) => currentDino.id === dinoId);
-    dinos.splice(dinoPosition, 1);
-    buildAllDinos(dinos); 
+    if (dinos[dinoPosition].health > 0) {
+      dinos.splice(dinoPosition, 1);
+      buildAllDinos(dinos);
+      };
 };
 
-// To know which dino to delete with the delete function above, we need to add event listeners to the delete buttons on each dino card so that we can then use the action of clicking the Delete button as an event (and thus be able to identify the target of the event and then the parent with the card class and then get that id!!). Once the dino is found, this will trigger the deleteDInoEvent funciton above!!! This is what the findDinoToDelete function below does!
+// To know which dino to delete with the delete function above, we need to add event listeners to the delete buttons on each dino card so that we can then use the action of clicking the Delete button as an event (and thus be able to identify the target of the event and then the parent with the card class and then get that id!!). Once the dino is found, this will trigger the deleteDinoEvent function above!!! This is what the findDinoToDelete function below does!
 
 const deleteEvents = (divId) => {
   if (divId !== 'graveyard') { 
@@ -405,9 +410,11 @@ const addAdventure = (e) => {
       title: adventures[randomAdvIndex].title,
       date: Date.now()
   };
-  dinos[dinoPosition].adventures.push(newAdventure);
-  dinos[dinoPosition].health -= adventures[randomAdvIndex].healthHit;
-  buildAllDinos(dinos);
+  if (dinos[dinoPosition].health > 0) {
+    dinos[dinoPosition].adventures.push(newAdventure);
+    dinos[dinoPosition].health -= adventures[randomAdvIndex].healthHit;
+    buildAllDinos(dinos);
+    };
 };
 
 const advEvents = (divId) => {
@@ -428,8 +435,7 @@ const printProgress = (dino, divId) => {
   } else {
     domString += '<div><i class="fas fa-skull-crossbones fa-3x"></i></div>';
   }
-
-  return domString
+  return domString;
 }
 
 const printButtons = (divId) => {
@@ -446,15 +452,15 @@ const printButtons = (divId) => {
 const printDinos = (dinoArray, divId) => {
     let domString = '';
     if (divId==='kennel') {
-      domString += '<div class="container kennel">';
+      domString += '<div class="container kennel pt-2 mt-3">';
       domString += '<h6 class="section-header">Here are our friends who are doing great:</h6>';
       domString += '<div class="d-flex flex-wrap">';
     } else if (divId==='hospital') {
-      domString += '<div class="container hospital">';
+      domString += '<div class="container hospital pt-2 mt-3">';
       domString += '<h6 class="section-header">Here are our friends who need some TLC:</h6>';
       domString += '<div class="d-flex flex-wrap">';
     } else if (divId==='graveyard') {
-      domString += '<div class="container graveyard">';
+      domString += '<div class="container graveyard pt-2 mt-3">';
       domString += '<h6 class="section-header">Here are our friends whom we miss dearly:</h6>';
       domString += '<div class="d-flex flex-wrap">';
     };
@@ -486,7 +492,7 @@ const addEvents = () => {
 
 // When the form gets submitted, we want to clear the form as well as collapse the form under the Add Dino button. 
 
-// 1 - To CLEAR the form: We will use the reset method - see below; otherwise - the old way was that you could create a function to clear the form once data // has been submitted:
+// 1 - To CLEAR the form: We will use the reset method - see below; otherwise - the old way was that you could create a function to clear the form once data /// has been submitted:
 // const clearNewDinoForm = () => {
 //     document.getElementById('dino-name').value = '',
 //     document.getElementById('dino-type').value = '',
@@ -498,54 +504,7 @@ const addEvents = () => {
 // 2 - To COLLAPSE the form, we want to remove the "show" class that gets added automatically by default by Bootstrap when the Add Dino button is clicked/when the accordion gets expanded! We will do this then: document.getElementById('collapseOne').classlist.remove('show');
 // We will add it to the newDino function because it is not something that will be reused so it does not need its own function. 
 
-// The newDino function prevents the default browser behavior after any event that calls this function (WILL NEED TO USE THISD WITH MOST FORM TO PREVENT DEFAULT REFRESH BEHAVIOR), AND then creates a brandNewDino object (usign the values entered in the form input fields and their unique ids), AND then pushes the brandNewDino into the dinos array we defined earlier.
-
-// const hospitalDomStringBuilder = (dinoArray) => {
-//     let domString = '';
-//     for (let i = 0; i < dinoArray.length; i++) {
-//         domString += '<div class="col-4">';
-//         domString += `<div id="${dinoArray[i].id}" class="card">`;
-//         domString += `<img class="card-img-top dino-photo" src=${dinoArray[i].image} alt="${dinoArray[i].alt}">`;
-//         domString += '<div class="card-body">';
-//         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`;
-//         domString += `<p class="card-text">Health: ${dinoArray[i].health}</p>`;
-//         domString += '<div class="progress">';
-//         domString += `<div class="progress-bar bg-danger" role="progressbar" style="width: ${dinoArray[i].health}%" aria-valuenow="${dinoArray[i].health}" aria-valuemin="0" aria-valuemax="100">`;
-//         domString += '</div>';
-//         domString += '</div>';
-//         domString += '<button class="btn btn-primary single-dino"><i class="fas fa-binoculars"></i></button>';
-//         domString += '<button type="button" class="btn btn-success feed-dino"><i class="fas fa-hamburger"></i></button>';
-//         domString += '<button class="btn btn-warning text-white adv-button"><i class="fas fa-hiking"></i></button>';
-//         domString += '<button type="button" class="btn btn-dark delete-dino"><i class="fas fa-trash-alt"></i></button>';
-//         domString += '</div>';
-//         domString += '</div>';
-//         domString += '</div>';
-//         };
-//     printToDom('hospital', domString);
-//     singleDinoAddEvents();
-//     petEvents();
-//     deleteEvents();
-//     feedEvents();
-//     advEvents();
-// };
-// DELETING the old function to build the graveyard section beacuse we replaced it with the print dinos funciton - to which we added a second parameter of a divId so that it can print various collections of dinos (live, sick, dead) to one ofthe 3 divs in index (kennel, hospital, graveyard). -- SAME WIHT HOSPITAL builder funciton above.
-// const graveyardDomStringBuilder = (dinoArray) => {
-//   let domString = '';
-//   for (let i=0; i < dinoArray.length; i++) {
-//       domString += '<div class="col-4">';
-//       domString += `<div id="${dinoArray[i].id}" class="card">`;
-//       domString += `<img class="card-img-top dino-photo" src="${dinoArray[i].image}" alt="${dinoArray[i].alt}">`;
-//       domString += '<div class="card-body">';
-//       domString += `<h5 class="card-title">${dinoArray[i].name}</h5>`;
-//       domString += '<div><i class="fas fa-skull-crossbones"></i></div>';
-//       domString += '</div>';
-//       domString += '</div>';
-//       domString += '</div>';
-//   }
-//   printToDom('graveyard', domString);
-//   singleDinoAddEvents();
-// };
-
+// The newDino function prevents the default browser behavior after any event that calls this function (WILL NEED TO USE THIS WITH MOST FORMS TO PREVENT DEFAULT REFRESH BEHAVIOR), AND then creates a brandNewDino object (using the values entered in the form input fields and their unique ids), AND then pushes the brandNewDino into the dinos array we defined earlier.
 
 const newDino = () => {
     const brandNewDino = {
@@ -559,7 +518,6 @@ const newDino = () => {
         imageUrl: document.getElementById('dino-image').value
     };
     dinos.push(brandNewDino);
-    // clearNewDinoForm();
     document.getElementById('new-dino-form').reset();
     document.getElementById('collapseOne').classList.remove('show');
     buildAllDinos();
@@ -569,6 +527,8 @@ const findHospitalDinos = (dinos) => {
     const hospitalDinos = dinos.filter((x) => x.health > 0 && x.health < 40);
     printDinos(hospitalDinos, 'hospital');
 };
+
+// Note for me: We deleted the old function to build the graveyard section beacuse we replaced it with the print dinos function - to which we added a second parameter of a divId so that it can print various collections of dinos (live, sick, dead) to one ofthe 3 divs in index (kennel, hospital, graveyard). -- we did the same with the initial hospital builder function.
 
 const findGraveyardDinos = (dinos) => {
   const deadDinos = dinos.filter((thisDino) => thisDino.health < 1);
@@ -594,48 +554,6 @@ const buildAllDinos = () => {
     addEvents();
 };
 
-const onlyByOwner = (e) => {
-  const owner = e.target.id;
-  console.log('id on dropdown option', owner);
-  const groupOfDinos = [];
-  for (let i=0; i< dinos.length; i++) {
-    if (dinos[i].owner === owner) {
-      groupOfDinos.push(dinos[i]);
-    };
-  };
-  // const groupOfDinos = dinos.filter((thisDino) => thisDino.owner === owner);
-  buildAllDinos(groupOfDinos);
-};
-
-const allOwners = () => {
-  buildAllDinos();
-};
-
-const onlyByAdventure = (e) => {
-  const adv = e.target.id;
-  console.log('id on dropdown adv option', adv);
-  const groupOfDinos = [];
-  for (let i=0; i < dinos.length; i++) {
-      if (dinos[i].adventures.includes(adv)) {
-        console.log('adventure found', adv);
-        groupOfDinos.push(dinos[i]);
-      };
-  };
-  buildAllDinos(groupOfDinos);
-};
-
-const allAdventures = () => {
-  buildAllDinos();
-};
-
-const events = () => {
-  $('body').on('click', '.owner', onlyByOwner);
-  $('body').on('click', '#All', allOwners);
-  $('body').on('click', '.adv', onlyByAdventure);
-  $('body').on('click', '#all-adv', allAdventures);
-  // document.getElementsByClassName('adv').addEventListener('click', onlyByAdventure);
-}; 
-
 const alertNewDinoValidation = () => {
   $('#newDinoModal').modal('show');
 };
@@ -649,12 +567,10 @@ const submitEvent = (event) => {
     } 
 };
 
-
 // In the init function, we add the event listener for the click event - when user clicks the button with the submit-new-dino id, then the newDino function gets called. 
 const init = () => {
   document.getElementById('submit-new-dino').addEventListener('click', submitEvent);
   buildAllDinos();
-  events();
 };
 
 init();
