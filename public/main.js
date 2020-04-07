@@ -8,7 +8,7 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 99,
-        image: './dino-kennel-images/Annie.jpg',
+        image: 'https://lh3.googleusercontent.com/rddrd-rpvkBD48-8K020lJekzjhYB8cVvrbYJ4auO4RlV3Mp7MpGBRq6MWT1pRJ34314sT9HdNZV-XTR7Ed0loDUa6Z9Upe2C3vPSjHCDbLi9-kAFv14jCGs1zHTkyjj0QKOVIEjrtKkgnpDX6rn5tAb9K0lXP30mRi6ok7zPvOpyZWciOhx8oAhMd1m0GzZUVw5vL9wKKT4fN39TJLevcdVtODpPXlKJac1i7o80ktGknDauIgoo8Ja77snVKNRVvAd-4WGfZ6GCXEoOD4NgneweoSwqoTLt_lMYzPOz06rNrOXwYM0Fs7_BZtxmAK3TposcJLSkEJWXu4olOkSIc71ndZRcctgQpY5mFuzyN0LyESWZjJEev58q-kZn2A2FAeopiv5bqI0IU7-Wc38pHKQELp4mRZVMbvyz4CmxK1Eli-4xvKOACPojfEcqgh1PiVo0oXOI3VMwSrBrtXWhZ8eL9m6zTgZi5sjzfH-BR-d-A6yh4yM9RjV_A2sZTzdNIacTzl1ypcsHSahei6LSxhoolv6upO1d2e4Kht6yR6CdW2MN3F4ySAnZ63PAb1gruQ1iG7qsjcSiaCDxpCi97XzSekmRWhtcFTipbQsF69XnwIMrcxIaYTr6OcUcbmj5gbOWOgqxpQ1JdmOGF8dqPEJ5m4zgkT2xrGVNejb1iDSEDS7OBJI5kD-TmbnTpVRqv1LVO8xqbX7kmaildZoJ7f7T1FsHr4lz8K0eeJ4jY-EJNhZhTFv-Q=w2078-h1558-no',
         alt: 'Picture of an Ankylosaurus',
         description: 'Ankylosaurus was covered with bony plates of armor and had a dangerous clubbed tail that it could swing to infect severe injury on its predators.',
         isCarnivorous: false
@@ -22,7 +22,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 1,
-        image: './dino-kennel-images/Brach.jpg',
+        image: 'https://lh3.googleusercontent.com/jhdbrqjd1xDCKyRKr8pGyuBfZlsC6-spWlO4QM9GYE4zrAXjg1D2k7ZuyJrRNxXgxQlnei0ibHmMsAjTR5-pytUhRH6NBiXkxffQRnpZWIxKqKkC7_ekcz5nWozbvePIYqT7rtJg4Xv2pVj0hsJQKFwFhXS8M3CLfOOdLSTpICZTEnOSniX4pXAqZlUi50Ced9LMCM7gpoWoz6HlljQm5McJ8TuGXWPwVYPn3RYStBxA_88KS48xxry5gNfpGio9lBFrmK8_7BI4Bao73YiwLp3GbFsK-6VFoZsfhOosdtDPJrDJTAZgBwHbG9tCRYhey0u6ZyQ45WDaVb5_W-WFPTSi39A1-nQopfXAFla20o8KZIuulXItlcoicpPUnj28tYgUo1TX3HCZbOUhxjnG3E_N6SUINAqNKoCPr1ssi9v_m2f1R-ulXYZCe_6jt50NVNKhXmZa8pfq3HtK-eo7ULOVwUZuGPNl759zSOpjwsG_3ZgOJKTpB3Sax1r4nQwPugkjvxoqmB33KgyiprWqNznbtq_IZHBTJUMQ9hw5H42ws_6iLInLUTh8xyg6EtE8eQ-R_Sg8wsS_ivHdfDDNQOfqNgx53Bpal7lBrUPbEEi9v2ht32Ez3uc-F-auy4zohnPqYLVF2CqZAR8IpM2zf6JlThpV-IAhOii87oGjGW3kaPz-3xrfw1RcEINqnUdlP4z7ZxcJ8ZUa3wuIn1E6i9-J79M5Q6mnOu7zljoLtPRB3gbKXKlO-w=w2078-h1558-no',
         alt: 'Picture of a Brachiosaurus',
         description: 'This plant-eating dinosaur was one of the largest animals known to have walked the earth. Standing up to 50 feet tall, its neck was 6 times longer than a giraffe\'s.',
         isCarnivorous: false
@@ -36,7 +36,7 @@ const dinos = [
         owner: 'Mary',
         adventures: [],
         health: 45,
-        image: './dino-kennel-images/Flipper.jpg',
+        image: 'https://lh3.googleusercontent.com/8T7OE9rw6nv7unCgkBNb5k3VEMw4zb-508iTjo0RuDo9uyQCnNrIlqltTvj1v0nr84yNXyZY8gXSQY7R6dRJ3bKXg9fLsL9Qsga0OTjgj2DjUCcWczUwXA0Aa0mao-0X5Z71UAEMOm4epyJcGMqwEQm4yDA51GPJYk4KEBj5tl9DgWHLuHaI-5DLOUkqktz_UQJcxUbUMbWqLo7FRb_7YdcGkViVSPYbIKCGf16ZLFAPFlGc5yX6ifvy0uAIbkGogb-qsNb8owArGOljrYrkdavugO5VV2cbqGYr3vhzmM7ELNWK4YmMgAxdPifmx0iyfPrZ3g_A3KnDdkzpTwQ3AUP6HRr5Qkkb-WKXs0GKOrjyT1sGD9Zg7N6Y84wm3luX9iiU0Z2iISXxdIuZEMIoa2s3faunrjY3nveYWJkR9wUtjFUzv8TzldhJE_svaD8NUQ3hl_rDNHphxSjcXwGD0i6mdLsgom-T28GgkC0bP_KyVnukt1t3ydVZf0WxJNA1Jri-e-T5pD7d0YJqr-Bd9F9ktiocSGE7n2ngMUpQ6aOCFgAtvXHDdK0d29MHiLNaAw93EBct9vLDO2jhHNMEaNrPpN2xHql2lMx2PehTCgOLw5Sccjyp0-sqqcp8CV_jzbTAubzczrNSq24SAe9HmFAHTKWwGyVK1RJZVc_X-9kY_bphkbJyVl-Lkx1QGK6Idvu5QQ1T261h7GW20eTTLKo4UwD6jSbUDV3J-Uj9nbcwAAtsnJMukQ=w2078-h1558-no',
         alt: 'Picture of a Pleisiosaurus',
         description: 'This marine dinosaur had 4 wide flippers that propelled it through the water with ease. Its wide jaws and razor-sharp teeth allowed it to catch its prey just as easily.',
         isCarnivorous: true
@@ -63,7 +63,7 @@ const dinos = [
             }
         ],
         health: 70,
-        image: './dino-kennel-images/Lizzie.jpg',
+        image: 'https://lh3.googleusercontent.com/ObdwqmH2NZprbYVDLbyzs6jUtdbMoNZ5mik7LBcM2UNle8SsMedKweNCYfCZLirks5qWKkfcKJoFlqgoElL8fVhGctsY5rbSo3oGjxtoNqarj5VeWSdu_71vZPd4arIEMGaKcP3Un8xYgtl0vKuX0UKGPNNOK_5xGE4jACIwK-J7w2T3wJ7oWhYdMaqCiRi-XdBVS61Z1M8YdxUXwYm4NCbduB7wda6Ya9qQiNeGbdYN4zYfoDQIeGSPutfMcm_5qZ7VUN-FXjVmkEUVWC4_E_HeG0uwGwMuLBiEMQmGzWzXAmwqgPu1_B1oPoEGTcSCWg68Z8iszjAWxue9w_OYnoOYhiUIgczsZmQ9y76Nv9yzFiPbGKDMsoDkXRvCBOzOHnNnfKx4kADKe9XUYtaPZjgjXM7BIbn0oDDGHFliIuSKowXEHR-uwWc3Y7ZT-clmVXj9yRpXlYbTMjEJjfDbglGC26qztIXRC25VzjTlpC8vjZZ10bfiKuTmvHzjcrHhhHdvj7lZezUI57hOc_wiujiUR7RFS8C7hZIqQT6f3ZYXYPMmGBuA7ie4S2li01dfdesldq4wVC_TXRJpQOuFhBzZybRChlA6DlvadNcJFPzkm8GtzrgOV1fyxIQZ_kBFxpS7GNf4UwUaUstCMdDdr4kGxUamhmaM4gQe3dK-v1PsukbZRKfTRtvyhZijQKmqGo3SQOClL0fpwJxWQ2ogDRvldS7wLlDwnIjvoJN99aEUFRDz-BTKqg=w2078-h1558-no',
         alt: 'Picture of a Tyrannosaurus',
         description: 'Earning its name, which means \"tyrant lizzard king\", Tyrannosaurus Rex had a massive skull with powerful jaws able to eat up to 500 pounds of meat and bones in just one bite. This popular prehistoric predator can also be distinguished by its huge legs and small arms.',
         isCarnivorous: true
@@ -90,7 +90,7 @@ const dinos = [
             }
         ],
         health: 5,
-        image: './dino-kennel-images/Perry.jpg',
+        image: 'https://lh3.googleusercontent.com/7WHgm69nBseVFm69h9mmDUZEwuH4yt3RB-HcNeRvWyAyENijpnoPze-p6SFFX07YHjX-baTgXGxmnKfeN2OLxnR4kwzPewx7qFplcEQkKZme34eV0mOlfzKHwSwAvbWPAh_P40cp2xTjjfzVfrYouKIerJ6aULm5B5DflrpU6ylFXi6V_IgmmV2SkJ1gVs7YId8goMXnJ_8S_AZn7pu54dMxyq3mHHT38Occ9wtw0gFLBJJUxY4slZ1BL2N_9lSYTWDIGCDRzWqxAZP9fmtADOT0VryXNCCL0ocZ7O3oo49AyTkXUqlzqXFmgklUlH9rj3Us2ZcWWwvFw30W8fSKZXfm5BuoSk4JGj28jzubIE_wDlaxHJvJLPM1pR_MDe2uUjJyFiex0ygKj3VYqNwdMT0nNdp7kKHBhXgHSfYIDRri4rUROJUOVHwLxOEUJ2N0Lv42DN7md90Kjlx08Yo4okXPtHwtgsd9muw2Ltcn6G71cX_DsVHggX7vicZZKfUAY88_HUdSxjnGIa0mcZ50dljWrB7HzGWmttWhtfo1fTo5tQlC-OWAAPhn75WE-enNMvVrdRcg7YycbghJb7xhq1ASxJEjWFSQWGbcfrrMV1tMjPUzFtXFdTHgYcd7YRUDAnJMd_0QpdxjpCQEwvM_PaDYqdXmmP1mCmyXrXAhv18-b3DMNs_02HDI1DT5kZP6y7G2uePiOvO6KMQiDHM62t3cs_lWs3TFLEGGRfhuZ2-92O_1YVq8gQ=w2078-h1558-no',
         alt: 'Picture of a Parasaurolophus',
         description: 'The large crest on its head is an identifying characteristic of the Parasaurolophus. It is believed this crest helped the dinosaur hear and regulate its body temperature.',
         isCarnivorous: false
@@ -104,7 +104,7 @@ const dinos = [
         owner: 'Zoe',
         adventures: [],
         health: 0,
-        image: './dino-kennel-images/Punk.jpg',
+        image: 'https://lh3.googleusercontent.com/fnEkzduinNtE5XxsAYfcKaKZ40r8p84OqjEQyhPV_8yl8jMc5Qmbf8RG7e-IHAZiyNEQXfv_jmGemGJ7s7ld4HkbpYSeiqC-du90RROv1SRRzUMAYCWjhyPpDDeA1IFZsJoBDa8MvbX1tHS6RWu59J0XZSA28LiYEJ-bkd1DIM-YDeEQRa9DMPaPOw5mRx18_lkkOeoKJQWTKOnHSUVz5pSYxAhvjrps16KpIkN5ES2hC6IylKCR3EFcwrWy2HqEus7qiTzV0lDo7IyzQkyarpTJhHKkDJ-LrcFAnI3HaWkzyoZ1STkdFb7HdqqApsEUs6-MZz8bHTW0YvKpqy72yq4BKmsNHTXmWmWxmU9ABfNQH_BiAFonUOm2TBNEwzVAHO4OlxdRz8But9wqqJBs75ThpmMNLpxlOYrwXZXHTcFZqSLbYwC3GXxalwkAy5nNL3w8wPCGpPvsPCDNuYem_BTYPRP4nA2ZUB3sQPV3sKyDLqqET9oNkiJ0ybc-PkUCf2yvPSFYOpegpjLIHKcR7EVTysLW7t78lvyMkd5yBnKggrgJxuRvKaso-fdLO5crn--kJlYUGiyZRHPvy1nZm7OW-Q8szJzrynUqbrNcZZsY_uXFfQjgDGMxmjOihClLdhcByFSaSp2O6gYqgpg7_d3KSi9sr9YCqpo13T_SIMt-hxx5XuSAmGQf3BG1=w2078-h1558-no',
         alt: 'Picture of a Stegosaurus',
         description: 'Stegosaurus is distinguished by the double row of large triangular plates along its back and the four long spikes on its tail. Some scientists believe the plates worked like solar panels to provide the Stegosaurus with body heat.',
         isCarnivorous: false
@@ -118,7 +118,7 @@ const dinos = [
         owner: 'Luke',
         adventures: [],
         health: 0,
-        image: './dino-kennel-images/Spiney.jpg',
+        image: 'https://lh3.googleusercontent.com/6Hlok9eUhvUXzQXNWx2O7iWglF5qEQaOwTx-wYfp83ao8RYGuZ5wvF0ryJbcW5BdKMeKb9KDQs1IUi28nFjY8juBa00W-DuehWy7_wzRDETkVZO2aex8wTJjml32TJN7MFcx36NpdvR_SS0bINgWAm_SZ3camXfdhbFukU5aJSpuDLJ5h1gtlbbwmlQuOCoX2-Xp--PGDkVSS3PJnWbuF9-6pmFucQeTAqhJ_BciuWySVygOMS_Um-mB5RNHkJEo6b7uJM0doH0qXxe4fmY_AImRYXHtU4g72iO7sI_m2VZT6YJoCe8s0IICRyV9KbYoaiAyWQCGv2P0QWhu_3aX2TQEJZMbCFuHDtnT4Y61jo2F-bEGm1_ttbXhhFFirPmV8blKTwSs6StZvJ5sxTFsBQlnZVWh_J6nXeoeLr0eBubis_W0h1e9HUPdX-djjLXrqr966mTV85kn60JSaF1NHGNdXrF99uNKsrmA0iROuBRzEDypA5TbpFUSYNd-Ezoc8CC33QnzzZbPj1ndQPOMwF0pE1szIue5TnngaNmetDJJUoaMUNiu9_WQfZAsKMUj6ss3rpkMupwignN9hcVVJZN0gwnX9cE3xwYVdLXRyHAvireIWVkCUPb83uMV6bYSGXoQmLXf9drhZKRe8uuVINob3--l8r7KYibbbXZVfHhCKk5Q6LLUwBawHHf-fH68W9oCdJc0dsB-ZK4OCi3kt1b1tMyjZQruqaQvGaUcevP7zFVGNkG64w=w2078-h1558-no',
         alt: 'Picture of a Spinosaurus',
         description: 'The Spinosaurus is easily identified by the giant sail on its back. It gets its name, which means \"spine lizzard\", from the up to 7-feet spines that make up this sail.',
         isCarnivorous: true
@@ -145,7 +145,7 @@ const dinos = [
         }
         ],
         health: 30,
-        image: './dino-kennel-images/Walker.jpg',
+        image: 'https://lh3.googleusercontent.com/G3vVhB44tTYf5bPc6FyudF94MySAi6xgur45DbL55XMLgeHWyHwQSXCJa1cvTsiexxa03bdGYwMSKg5HtwYa-bSfPuONzvOGO1pQno2y-VkVn3KbktdTuRjFd6yFdWpGHNSso4_QsMxuj7SFKru95M7WOyP-EnlIU2IaguYGSl3A3jq7HgijDz5XB5E8Z_ZPNHYaFYU3nr0YP8ozuYH-2iZpvV1D3dO3zaCYr7uC_nd_r8qyDmR3O7LgukSMnwzWe22M3H1sAIVheiLyM7r3puAKGH-xiaui3fBKLHLPfRq3vPm7uNzN_Djia7CKkzX0Ou--7ZvNJKJUrWpjLO8URdYIyofUfvZpypb4X1qndSMAuLYI9dqS5Hg1FD58aKkBk-IlTHKxur1Jh5BGMsiKsnms1KRZ_W-rcg-q4ngGhkscx4LrpRlb6z_y2fB6wtmsumNlIwaPCKa7gwLgwoh0CTjurlHxWd5cek3wuWIB103mg6yde4nE0QgCXSkPpfhNDTnFU6g2BRGBlyhSFjfBjUNjw_JussVyYKTXORMW1KG9Woaj4mqaBrP0J69tg2Z6dKlwxz_-MpJYd9-wmLp3ub2v-xS0Iy35jojLDRwgnXCri8zxRlx31NNHvNbfOf5BUCa4Ak5G0JuFeYfVHLRImGW2Z3tRcM6RxuPgt7USE_GcuGx4S6T8XNPVrwIkL9cDahXWkNBiiYRG808PoY0RfqZBBHGK-S3YXQkGH2tMF-4bCyvVp4zlXQ=w2078-h1558-no',
         alt: 'Picture of a Hypacrosaurus',
         description: 'This upright-walking dinosaur is distinguished by the crest on its head and row of spines along its back.',
         isCarnivorous: false
@@ -159,7 +159,7 @@ const dinos = [
         owner: 'Anca',
         adventures: [],
         health: 31,
-        image: './dino-kennel-images/Rhino.jpg',
+        image: 'https://lh3.googleusercontent.com/R_uZ5811o9mSs0v_5n3kDz0YbZqT6nADl6deJaL04CSFOyqstcP4GCNZ6tj6M-U5SahYOPiQJGvgW3EloydSqAt49z1uk_yiY0O-juEudUvUA_DhdOlmBmw8Kfkb9kw3cZWng88PpRXcLdRvTXxyN6fxqTDwtfqwIXVK7qkWXfwp60cQLesTRZ4BedG1yf0g3lWGyP9gFq2t54ARIOQKYx3lklYOoYeDoloZ8XG5WkoqzToRgksrwiy1_-EnQ7C_UwaeHO6WcUIJqSy2dxJQLsLly7x_fXpAwTcbV25BYSdxiVPdyFQesjc8fytfDECshfux3O1GbU_WOc3phdOPx1aDZonNpwIWeY0ha6HYgoQnRP9fXz2J_rLJpSX8-HhVMsEohw6faxVpIZsFRke0_dMIE7ZGNU-G4AW3INWF-MivFv_uwCw_V7ar4J99pe-uokeq83Nh6xSxUq3Q3ch0_drZHQuzbY_bqXEhVR70ja2b7Gu-15WKlBork7QE1Xi5nB5Zb2twsr6_59B2K4P-gwMZyJvxtmN6c1l_YvHmnL5w9pLyQSEKSx0pkuNDScxX9nopWlEF8HEqC5SPYqDSg2d9nTqmRv3EUHr5VxKaoJuwbWuOH_ZJwX-FTW2c1MemvKrG74-ySdcd9ITDhoqMy-9R4e5ssTGrZDn70yAwlZ02-qgISlr5tSbiwzdlhbnGtTp4xURTYNqxwsBbP6L0K1lxniE4jtWnYIc55N8h5eYou4lFteXIAw=w2078-h1558-no',
         alt: 'Picture of a Styracosaurus',
         description: 'Styracosaurus is easy to identify. It had a short frill along its head with 6 long spikes along the edge and a snout with a 2-foot horn that it used for self-defense.',
         isCarnivorous: false
@@ -173,7 +173,7 @@ const dinos = [
         owner: 'Anca',
         adventures: [],
         health: 35,
-        image: './dino-kennel-images/Leif.jpg',
+        image: 'https://lh3.googleusercontent.com/PtTFNKHTJdzsHACGcTvIfPcVzZzh7n5ItAMT3YPeTJLlxBVMgvzyLHkVtX5T-nIwwtaWkB7jawg5pZV6Iekc6tRFZtpvG8O2XAhjHHKs-C2e2ay3nIdyK-4w69zp_sm6_ywpcwsqH8O74-ysVj9fnNcF88pl8t9hQI8Aeifokjkjl9wRv1hw9y7Vp6DayttTOWrVl9wgkk6sKkkQ4tGFqjwevYKro8v7kWXL1zprtWFrNO3iW78An5wL3xa9L3Ft24PNkDJvRjNyS00CSeERzzoXDWlqD6EUE2gIYbgPUobG_Fhxc1My6so6Of3ctbDxGDF6Eq38BiQWVVjLeDljuUxnGG8Sa_BC0t1lzky9GIl3MZiDJl-1qQfFwqvZWKWeLuVsPyEe17ohSfosSrI6eFnwQKatu-ckrPPuVjy2PQRS_3phVlGfwJypP61vdBgXLhid14YfEdbtv1LYF8apglV9JdQTjaL3tQl_65G6uP6fV_s9QvqRdB94mUvvYU0fHvxHr9d76mFpgtcyJ_CTa2of8uyAy5BluA7522WkTzEiVDhnGwW39Ym0kWqqjZZ3M2ChJRCSp4krT7ZyNnbfiNOCpkuMC4oq68syqH0zfqJ0JOVPJOnkhJ3jSermDhI0BAGEaf8SKcQxZ9lbzeQZk-EXZPEbwnqK0YxhYrSz6skNTrnkgwz6UQB5p3OGAE6StV3Vxh7m6GaNMiKwHONtpPfKTVV_8zK1OdsICn0l561FQxI6fqymRw=w2078-h1558-no',
         alt: 'Picture of a Anatotitan',
         description: 'Named for its duck bill, the Anatotitan had hundreds of cheek teeth to grind its dinner of prehistoric plants. This dinosaur can also be distinguished by its large back legs and long tail.',
         isCarnivorous: false
