@@ -1,7 +1,12 @@
-# Pet Dinosaur Vet Clinic
+# Patient Tracker
 
 ## Description
 This application tracks patients at a pet dinosaur veterinary clinic. This project showcases the vanilla javascript we learned in the first part of our front-end program at the Nashville Software School, the Foundations milestone. 
+
+## Background
+It was exciting to combine all the new technologies and tools we had learned about in the first part of our front-end program at NSS as we were working on this project. It helped solidify my knowledge of HTML and CSS, Bootstrap - and in particular how to use flexbox, as well as vanilla javascript. 
+
+When our amaZing instructor Zoe Ames suggested a dino kennel as the theme for this review project, I chuckled - dinosaurs were following me from the playroom into the classroom and my office! As a kid, I relished the visits my mom took us on to see the dinosaur skeletons and skeleton replicas at the Grigore Antipa National Museum of Natural History in Bucharest - but that was the extent of my fascination with dinosaurs. There was not an abundance of dinosaur toys or other paraphernalia to enjoy at that time. So when my daughter started (literally and figuratively) digging dinosaurs, I was as excited as the next 5-year old. That is why you now get to enjoy some of the dinosaurs in the Simon Dino Kennel right here on this site!
 
 ## Feature List
 1. Healthy dinos get displayed in the kennel.
@@ -29,6 +34,8 @@ This application tracks patients at a pet dinosaur veterinary clinic. This proje
 ##### Validating New Dino's Name
 ![Validation](./dino-screenshots/validate.png)
 
+## Technologies & Tools
+Bootstrap, CSS, Github (for version control), HTML, Javascript (vanilla)
 
 ## How to Run
 1. Clone down this repo.
