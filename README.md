@@ -1,7 +1,7 @@
 # Patient Tracker
 
 ## Description
-This application tracks patients at a pet dinosaur veterinary clinic. This project showcases the Vanilla Javascript and additional tools we learned during the first part, the Foundations milestone, in our front-end bootcamp program at the Nashville Software School.
+This application tracks patients at a pet dinosaur veterinary clinic. Dinosaurs find themselves either in the kennel or the hospital, based on their health score; unfortunately, some dinos have passed away, and we keep a record of them in the graveyard. This project showcases the Vanilla Javascript and additional tools we learned during the first part, the Foundations milestone, in our front-end bootcamp program at the Nashville Software School.
 
 ## Background
 * It was exciting to combine all the new technologies and tools we had learned about in the first part of our front-end program at NSS as we were working on this project. 
@@ -55,3 +55,6 @@ Bootstrap, CSS, Github (for version control), HTML, Javascript, jQuery
 1. On your command line, run `hs -p 9999`.
 1. In your browser, navigate to `http://localhost:9999`.
 
+## Firebase Deployment
+This project has been deployed with Firebase. 
+You can access it [here](https://patienttracker-5a29e.firebaseapp.com/). 
