@@ -3,7 +3,7 @@
 [Check it out here!](https://patienttracker-5a29e.firebaseapp.com/)
 
 ## Description
-This application tracks patients at a pet dinosaur veterinary clinic. Dinosaurs find themselves either in the kennel or the hospital, based on their health score; unfortunately, some dinos have passed away, and we keep a record of them in the graveyard. This project showcases the Vanilla JavaScript and additional tools we learned during the first part, the Foundations milestone, in our front-end bootcamp program at the Nashville Software School.
+This application tracks patients at a pet dinosaur veterinary clinic. Dinosaurs find themselves either in the kennel or the hospital, based on their health score; unfortunately, some dinos have passed away, and we keep a record of them in the graveyard. This project showcases the JavaScript and additional tools we learned during the first part, the Foundations milestone, in our front-end bootcamp program at the Nashville Software School.
 
 ## Background
 * It was exciting to combine all the new technologies and tools we had learned about in the first part of our front-end program at NSS as we were working on this project. 
@@ -21,7 +21,7 @@ This application tracks patients at a pet dinosaur veterinary clinic. Dinosaurs 
 1. Using Google photos to ensure my personal images would get displayed correctly
 * When our amaZing instructor Zoe Ames suggested a dino kennel as the theme for this review project, I chuckled - dinosaurs were following me from the playroom into the classroom and my office! As a kid, I relished the visits my mom took us on to see the dinosaur skeletons and skeleton replicas at the Antipa National Museum of Natural History in Bucharest - but that was the extent of my fascination with dinosaurs. There was not an abundance of dinosaur toys or other paraphernalia to enjoy at that time. So when my daughter started (literally and figuratively) digging dinosaurs, I was as excited as the next 5-year old. That is why you now get to enjoy some of the dinosaurs in the Simon Dino Kennel right here on this site!
 
-## Technologies & Tools
+## Tools & Technologies
 Bootstrap, CSS, Github (for version control), HTML5, JavaScript, jQuery
 
 ## Feature List
